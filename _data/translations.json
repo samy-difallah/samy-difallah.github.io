@@ -1,0 +1,76 @@
+{
+  "fr": {
+    "title": "Samy DIFALLAH | Portfolio",
+    "tagline": "Ingénieur cybersécurité",
+    "current_location": "Grenoble, France",
+    "section_title": "Parcours professionnel",
+    "footer": "Développé par Claude Code",
+    "jobs": [
+      {
+        "company": "Bull",
+        "logo": "https://www.bull.com/hubfs/bull%20symbol%20orange.ico",
+        "period": "Juillet 2025 - Aujourd'hui",
+        "title": "Ingénieur PSIRT",
+        "location": "Échirolles, France"
+      },
+      {
+        "company": "Framatome",
+        "logo": "https://www.framatome.com/app/uploads/2021/09/cropped-favicon-1-1-192x192.png",
+        "period": "Octobre 2024 - Avril 2025",
+        "title": "Ingénieur logiciel & cybersécurité",
+        "location": "Meylan, France"
+      },
+      {
+        "company": "EDF Hydro",
+        "logo": "https://www.edf.fr/themes/custom/nova/assets/images/00-tokens/logos/images/logo-edf.svg",
+        "period": "Septembre 2022 - Août 2024",
+        "title": "Alternant ingénieur cybersécurité",
+        "location": "Saint-Martin-le-Vinoux, France"
+      },
+      {
+        "company": "HARDIS GROUP",
+        "logo": "https://www.hardis-group.com/wp-content/uploads/2024/12/cropped-favicon-hg-96x96px-300x300.png",
+        "period": "Mai 2022 - Juillet 2022",
+        "title": "Stagiaire développeur Python/Node.js",
+        "location": "Seyssinet-Pariset, France"
+      }
+    ]
+  },
+  "en": {
+    "title": "Samy DIFALLAH | Portfolio",
+    "tagline": "Cybersecurity Engineer",
+    "current_location": "Grenoble, France",
+    "section_title": "Professional Experience",
+    "footer": "Developed by Claude Code",
+    "jobs": [
+      {
+        "company": "Bull",
+        "logo": "https://www.bull.com/hubfs/bull%20symbol%20orange.ico",
+        "period": "July 2025 - Present",
+        "title": "PSIRT Engineer",
+        "location": "Échirolles, France"
+      },
+      {
+        "company": "Framatome",
+        "logo": "https://www.framatome.com/app/uploads/2021/09/cropped-favicon-1-1-192x192.png",
+        "period": "October 2024 - April 2025",
+        "title": "Software & Cybersecurity Engineer",
+        "location": "Meylan, France"
+      },
+      {
+        "company": "EDF Hydro",
+        "logo": "https://www.edf.fr/themes/custom/nova/assets/images/00-tokens/logos/images/logo-edf.svg",
+        "period": "September 2022 - August 2024",
+        "title": "Cybersecurity Engineer Apprentice",
+        "location": "Saint-Martin-le-Vinoux, France"
+      },
+      {
+        "company": "HARDIS GROUP",
+        "logo": "https://www.hardis-group.com/wp-content/uploads/2024/12/cropped-favicon-hg-96x96px-300x300.png",
+        "period": "May 2022 - July 2022",
+        "title": "Python/Node.js Developer Intern",
+        "location": "Seyssinet-Pariset, France"
+      }
+    ]
+  }
+}

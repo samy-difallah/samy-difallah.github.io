@@ -1,0 +1,74 @@
+---
+layout: base.njk
+lang: fr
+---
+
+{% include "navbar.njk" %}
+
+<main class="pt-32 flex flex-col justify-center items-center px-2 sm:px-4">
+    <div class="max-w-4xl w-full flex flex-col items-center text-center">
+        <h1 class="text-5xl font-bold mb-4">Samy DIFALLAH</h1>
+        <h2 class="text-2xl text-stone text-center mb-2">{{ translations[lang].tagline }}</h2>
+        <p class="text-sm text-stone-400 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            {{ translations[lang].current_location }}
+        </p>
+        <div class="pt-8 flex items-center space-x-8">
+            <a href="https://github.com/samy-difallah" target="_blank" class="w-[30px] h-[30px] hover:opacity-80 transition-opacity" title="GitHub">
+                <i class="fa-brands fa-github text-[30px] text-white"></i>
+            </a>
+            <a href="https://tryhackme.com/p/royalewcheese" target="_blank" class="hover:opacity-80 transition-opacity" title="TryHackMe">
+                <img src="https://tryhackme.com/favicon.svg" alt="TryHackMe" width="30" height="30" class="filter brightness-0 invert">
+            </a>
+            <a href="https://www.linkedin.com/in/samy-difallah/" target="_blank" class="hover:opacity-80 transition-opacity" title="LinkedIn">
+                <i class="fa-brands fa-linkedin text-[30px] text-white"></i>
+            </a>
+        </div>
+    </div>
+</main>
+
+<section class="pt-20 pb-20 max-w-4xl mx-auto px-2 sm:px-4">
+    <h1 class="text-4xl font-semibold text-center mb-16">{{ translations[lang].section_title }}</h1>
+    <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-stone-700"></div>
+        <div class="space-y-16">
+            {% for job in translations[lang].jobs %}
+            {% if loop.index % 2 == 1 %}
+            <div class="relative w-full flex justify-end">
+                <div class="w-1/2 pl-8 text-left">
+                    <div class="flex justify-start mb-3">
+                        <img src="{{ job.logo }}" alt="{{ job.company }}" class="h-10">
+                    </div>
+                    <time class="block text-sm text-stone-400 mb-1">{{ job.period }}</time>
+                    <h4 class="text-xl font-semibold">{{ job.title }}</h4>
+                    <p class="text-stone-300">{{ job.company }}</p>
+                    <p class="text-sm text-stone-500 flex items-center gap-2 mt-1">
+                        <i class="fa-solid fa-location-dot text-xs"></i>
+                        {{ job.location }}
+                    </p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 translate-y-3 w-5 h-5 rounded-full bg-white border-2 border-zinc-950"></div>
+            </div>
+            {% else %}
+            <div class="relative w-full flex justify-start">
+                <div class="w-1/2 pr-8 text-right">
+                    <div class="flex justify-end mb-2">
+                        <img src="{{ job.logo }}" alt="{{ job.company }}" class="h-10">
+                    </div>
+                    <time class="block text-sm text-stone-400 mb-1">{{ job.period }}</time>
+                    <h4 class="text-xl font-semibold">{{ job.title }}</h4>
+                    <p class="text-stone-300">{{ job.company }}</p>
+                    <p class="text-sm text-stone-500 flex items-center justify-end gap-2 mt-1">
+                        {{ job.location }}
+                        <i class="fa-solid fa-location-dot text-xs"></i>
+                    </p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 translate-y-3 w-5 h-5 rounded-full bg-white border-2 border-zinc-950"></div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include "footer.njk" %}

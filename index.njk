@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: index.html
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samy DIFALLAH | Portfolio</title>
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        const savedLang = localStorage.getItem('language');
+
+        if (savedLang) {
+            window.location.href = '/' + savedLang + '/';
+        } else if (userLang.startsWith('en')) {
+            window.location.href = '/en/';
+        } else {
+            window.location.href = '/fr/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirection vers <a href="/fr/">/fr/</a>...</p>
+</body>
+</html>

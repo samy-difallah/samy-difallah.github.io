@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ translations[lang].title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            opacity: 0;
+        }
+
+        body.loaded {
+            opacity: 1;
+            transition: opacity ease-in-out;
+        }
+
+        main, section {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 0.1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .lang-option {
+            color: rgb(163 163 175);
+        }
+
+        .lang-option.active {
+            background-color: rgb(39 39 42);
+            color: rgb(255 255 255);
+        }
+
+        .lang-option:hover {
+            color: rgb(255 255 255);
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#3b82f6',
+                        accentHover: '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zinc-950 text-stone-100 font-sans">
+    {{ content | safe }}
+
+    <script>
+        const scrollPosition = localStorage.getItem('scrollPosition');
+        if (scrollPosition) {
+            window.scrollTo({
+                top: parseInt(scrollPosition),
+                behavior: 'instant'
+            });
+            localStorage.removeItem('scrollPosition');
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+
+        localStorage.setItem('language', '{{ lang }}');
+    </script>
+</body>
+</html>
