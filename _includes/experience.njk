@@ -1,0 +1,100 @@
+<section class="pt-20 pb-20 max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-semibold text-center mb-16">{{ translations[lang].section_title }}</h2>
+    <ol class="relative ml-2.5 border-l-2 border-stone-700 space-y-10">
+        {% for job in translations[lang].jobs %}
+        <li class="relative pl-6 sm:pl-8">
+            <span class="absolute -left-[11px] top-5 w-5 h-5 rounded-full bg-white border-2 border-zinc-950" aria-hidden="true"></span>
+            <details class="group">
+                <summary class="grid grid-cols-[auto_1fr_auto] gap-x-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden rounded-lg p-3 -m-3 hover:bg-zinc-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                    <span class="col-start-1 row-start-1 row-span-3 flex items-center justify-center h-10 w-10 mt-1 overflow-hidden">
+                        <img src="{{ job.logo }}" alt="" width="40" height="40" class="max-h-full max-w-full object-contain">
+                    </span>
+                    <h3 class="col-start-2 row-start-1 text-xl font-semibold">{{ job.title }}</h3>
+                    <span class="col-start-2 row-start-2 text-stone-300">{{ job.company }}</span>
+                    <span class="col-start-2 row-start-3 flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-sm">
+                        <time class="text-stone-400">{{ job.period }}</time>
+                        <span class="flex items-center gap-2 text-stone-500">
+                            <i class="fa-solid fa-location-dot text-xs" aria-hidden="true"></i>
+                            {{ job.location }}
+                        </span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down col-start-3 row-start-1 row-span-3 text-stone-500 mt-2 transition-transform duration-300 group-[.is-open]:rotate-180" aria-hidden="true"></i>
+                </summary>
+                <div data-details-content>
+                <div class="pt-5">
+                    <p class="text-stone-300 leading-relaxed">{{ job.summary }}</p>
+                    {% if job.missions %}
+                    {% for mission in job.missions %}
+                    <h4 class="mt-5 mb-2 font-semibold text-stone-100">{{ mission.name }}</h4>
+                    <ul class="list-disc pl-5 space-y-1.5 text-stone-300 leading-relaxed marker:text-stone-500">
+                        {% for highlight in mission.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    <ul class="mt-4 list-disc pl-5 space-y-1.5 text-stone-300 leading-relaxed marker:text-stone-500">
+                        {% for highlight in job.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <ul class="mt-5 flex flex-wrap gap-2" aria-label="{{ translations[lang].stack_label }}">
+                        {% for tech in job.stack %}
+                        <li class="px-2.5 py-1 text-xs font-medium rounded-full bg-zinc-800 text-stone-300 border border-zinc-700">{{ tech }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                </div>
+            </details>
+        </li>
+        {% endfor %}
+    </ol>
+</section>
+
+<script>
+    {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        document.querySelectorAll('details.group').forEach((details) => {
+            const summary = details.querySelector('summary');
+            const content = details.querySelector('[data-details-content]');
+            let animation = null;
+            let closing = false;
+
+            summary.addEventListener('click', (event) => {
+                const opening = !details.open || closing;
+                details.classList.toggle('is-open', opening);
+
+                if (reduceMotion.matches) {
+                    return;
+                }
+                event.preventDefault();
+
+                // Start from the current height so a click mid-animation reverses smoothly
+                const from = details.open ? content.offsetHeight : 0;
+                animation?.cancel();
+                closing = !opening;
+                details.open = true;
+                const to = opening ? content.scrollHeight : 0;
+
+                content.style.overflow = 'hidden';
+                animation = content.animate(
+                    [
+                        { height: `${from}px`, opacity: from ? 1 : 0 },
+                        { height: `${to}px`, opacity: to ? 1 : 0 },
+                    ],
+                    { duration: 300, easing: 'ease-in-out' }
+                );
+                animation.onfinish = () => {
+                    if (closing) {
+                        details.open = false;
+                        closing = false;
+                    }
+                    content.style.overflow = '';
+                    animation = null;
+                };
+            });
+        });
+    }
+</script>
