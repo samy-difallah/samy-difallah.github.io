@@ -1,0 +1,33 @@
+<section id="projects" class="scroll-mt-20 pt-20 pb-20 max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-semibold text-center mb-16">{{ translations[lang].projects_title }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {% for project in translations[lang].projects %}
+        <article class="flex flex-col rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+            <h3 class="text-xl font-semibold break-words">{{ project.name }}</h3>
+            {% if pypi[project.pypi] %}
+            <p class="mt-1 text-sm text-stone-400">v{{ pypi[project.pypi] }} {{ translations[lang].released_on_pypi }}</p>
+            {% elif project.pypi %}
+            <p class="mt-1 text-sm text-stone-400">{{ translations[lang].on_pypi }}</p>
+            {% endif %}
+            <p class="mt-4 text-stone-300 leading-relaxed">{{ project.description }}</p>
+            <ul class="mt-4 flex flex-wrap gap-2" aria-label="{{ translations[lang].stack_label }}">
+                {% for tag in project.tags %}
+                <li class="px-2.5 py-1 text-xs font-medium rounded-full bg-zinc-800 text-stone-300 border border-zinc-700">{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% if project.links %}
+            <ul class="mt-auto pt-5 flex flex-wrap gap-2" aria-label="{{ translations[lang].links_label }}">
+                {% for link in project.links %}
+                <li>
+                    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-zinc-800 text-stone-100 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                        <i class="{{ link.icon }}" aria-hidden="true"></i>
+                        {{ link.label }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</section>

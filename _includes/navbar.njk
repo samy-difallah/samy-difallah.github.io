@@ -4,12 +4,18 @@
             <div class="text-2xl text-stone-100">
                 <a href="/{{ lang }}/" class="font-bold hover:opacity-80">Samy DIFALLAH</a>
             </div>
+            <div class="flex items-center gap-4 sm:gap-8">
+            <ul class="hidden sm:flex items-center gap-4 sm:gap-6 text-sm font-medium text-stone-400">
+                <li><a href="#experience" class="hover:text-white transition-colors">{{ translations[lang].nav_experience }}</a></li>
+                <li><a href="#projects" class="hover:text-white transition-colors">{{ translations[lang].nav_projects }}</a></li>
+            </ul>
             <div class="lang-switcher">
                 <button class="relative flex items-center bg-stone-800/50 rounded-lg px-1 py-1 border border-stone-700/50 hover:border-stone-600/50 transition-all duration-300">
                     <a href="/fr/" data-lang="fr" class="lang-option{% if lang == 'fr' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">FR</a>
                     <span class="w-px h-4 bg-stone-600/50 mx-1"></span>
                     <a href="/en/" data-lang="en" class="lang-option{% if lang == 'en' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">EN</a>
                 </button>
+            </div>
             </div>
         </div>
     </div>

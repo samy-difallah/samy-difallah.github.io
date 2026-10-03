@@ -2,9 +2,16 @@
   "fr": {
     "title": "Samy DIFALLAH | Portfolio",
     "tagline": "Ingénieur cybersécurité",
+    "pitch": "Je conçois des outils qui rendent la sécurité automatique et démontrable, pour les secteurs où la conformité n'est pas une option.",
     "current_location": "Grenoble, France",
+    "nav_experience": "Parcours",
+    "nav_projects": "Projets",
     "section_title": "Parcours professionnel",
+    "projects_title": "Projets",
+    "released_on_pypi": "publiée sur PyPI",
+    "on_pypi": "Disponible sur PyPI",
     "stack_label": "Technologies",
+    "links_label": "Liens",
     "footer": "Développé par Claude Code",
     "jobs": [
       {
@@ -79,14 +86,33 @@
         ],
         "stack": ["Python", "Node.js", "Weblate", "i18n", "Docker", "GitLab CI"]
       }
+    ],
+    "projects": [
+      {
+        "name": "gcve-sbom-analyzer",
+        "pypi": "gcve-sbom-analyzer",
+        "description": "Analyse les SBOM (CycloneDX, SPDX) pour repérer les composants vulnérables et prioriser les corrections selon l'exploitation connue (KEV) et sa probabilité (EPSS).",
+        "tags": ["Python", "SBOM", "GCVE", "CLI"],
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/samy-difallah/gcve-sbom-analyzer", "icon": "fa-brands fa-github" },
+          { "label": "PyPI", "url": "https://pypi.org/project/gcve-sbom-analyzer/", "icon": "fa-brands fa-python" }
+        ]
+      }
     ]
   },
   "en": {
     "title": "Samy DIFALLAH | Portfolio",
     "tagline": "Cybersecurity Engineer",
+    "pitch": "I build tools that make security automated and provable, for industries where compliance is not optional.",
     "current_location": "Grenoble, France",
+    "nav_experience": "Experience",
+    "nav_projects": "Projects",
     "section_title": "Professional Experience",
+    "projects_title": "Projects",
+    "released_on_pypi": "released on PyPI",
+    "on_pypi": "Available on PyPI",
     "stack_label": "Technologies",
+    "links_label": "Links",
     "footer": "Developed by Claude Code",
     "jobs": [
       {
@@ -160,6 +186,18 @@
           "Containerized the tooling with Docker and integrated the translation step into GitLab CI pipelines."
         ],
         "stack": ["Python", "Node.js", "Weblate", "i18n", "Docker", "GitLab CI"]
+      }
+    ],
+    "projects": [
+      {
+        "name": "gcve-sbom-analyzer",
+        "pypi": "gcve-sbom-analyzer",
+        "description": "Scans SBOMs (CycloneDX, SPDX) to find vulnerable components and prioritize fixes by known exploitation (KEV) and exploit likelihood (EPSS).",
+        "tags": ["Python", "SBOM", "GCVE", "CLI"],
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/samy-difallah/gcve-sbom-analyzer", "icon": "fa-brands fa-github" },
+          { "label": "PyPI", "url": "https://pypi.org/project/gcve-sbom-analyzer/", "icon": "fa-brands fa-python" }
+        ]
       }
     ]
   }
