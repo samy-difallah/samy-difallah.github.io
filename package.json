@@ -1,0 +1,12 @@
+{
+  "name": "samy-difallah.github.io",
+  "version": "1.0.0",
+  "description": "Samy DIFALLAH | Portfolio",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
