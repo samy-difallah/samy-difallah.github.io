@@ -1,0 +1,180 @@
+{
+  "fr": {
+    "title": "Samy DIFALLAH | Portfolio",
+    "tagline": "Ingénieur cybersécurité",
+    "pitch": "Je conçois des outils qui rendent la sécurité automatique et démontrable, pour les secteurs où la conformité n'est pas une option.",
+    "current_location": "Grenoble, France",
+    "section_title": "Parcours professionnel",
+    "footer": "Développé par Claude Code",
+    "jobs": [
+      {
+        "company": "Bull",
+        "logo": "/assets/logos/bull.png",
+        "period": "Juillet 2025 - Aujourd'hui",
+        "title": "Ingénieur PSIRT",
+        "location": "Échirolles, France",
+        "summary": [
+          "Mission de conseil au sein du PSIRT de Bull, où je pilote la refonte de la gestion des vulnérabilités en une plateforme modulaire et automatisée couvrant plus de 70 produits, conformément au règlement européen Cyber Resilience Act (CRA)."
+        ],
+        "highlights": [
+          "Conception d'une architecture événementielle de 15 à 20 microservices Python conteneurisés avec Docker, aux responsabilités clairement séparées.",
+          "Intégration d'OWASP Dependency-Track, via son API REST, comme moteur d'analyse des vulnérabilités à partir des SBOM.",
+          "Couverture de produits matériels, firmware et surtout logiciels, à partir des bases de vulnérabilités NVD, RHSA et GHSA, des analyseurs Trivy et Syft et de SBOM au format CycloneDX.",
+          "Automatisation de la priorisation des vulnérabilités en croisant les scores EPSS et le catalogue KEV.",
+          "Génération automatisée des bulletins de sécurité destinés aux clients, au format CSAF 2.0.",
+          "Rédaction de charts Helm conformes aux standards de la Software Factory de Bull et déploiement sur un cluster Kubernetes."
+        ]
+      },
+      {
+        "company": "Framatome",
+        "logo": "/assets/logos/framatome.png",
+        "period": "Octobre 2024 - Avril 2025",
+        "title": "Ingénieur logiciel & cybersécurité",
+        "location": "Meylan, France",
+        "summary": [
+          "Mission de conseil chez Framatome : j'ai rejoint une équipe de contrôle-commande nucléaire pour garantir la qualité et la sécurité d'une application Python servant à concevoir des armoires électriques."
+        ],
+        "highlights": [
+          "Rédaction des spécifications de tests unitaires, d'intégration, de sécurité et de validation à partir de la spécification des exigences logicielles (SRS).",
+          "Développement de plus de 100 tests unitaires et d'intégration avec pytest, dans le respect des règles de développement de Framatome, portant la couverture du SRS et du code d'environ 10 % à 100 %.",
+          "Écriture de tests de sécurité et d'intégrité de la base de données avec SQLAlchemy.",
+          "Mise en place de l'analyse statique du code avec ruff, mypy et bandit."
+        ]
+      },
+      {
+        "company": "EDF",
+        "logo": "/assets/logos/edf.png",
+        "period": "Septembre 2022 - Août 2024",
+        "title": "Alternant ingénieur cybersécurité",
+        "location": "Saint-Martin-le-Vinoux, France",
+        "summary": [
+          "J'ai effectué mon alternance au sein du service d'informatique industrielle du Centre d'Ingénierie Hydraulique d'EDF, qui exploite 3 datacenters, 4 500 serveurs et 90 applications dont dépendent des infrastructures critiques."
+        ],
+        "missions": [
+          {
+            "name": "Outil d'audit de sécurité des serveurs Linux",
+            "highlights": [
+              "Transposition des exigences de durcissement des CIS Benchmarks en contrôles automatisés, conformes aux politiques de sécurité d'EDF.",
+              "Développement de rôles Ansible, un par périmètre de contrôle, chargés d'exécuter sur les serveurs audités Lynis, un outil d'audit open source de référence, complété par des tests spécifiques écrits en Bash.",
+              "Écriture de plugins Ansible en Python pour l'inventaire dynamique, la gestion sécurisée des secrets et l'échange de clés SSH, ainsi que d'une interface en ligne de commande pour lancer l'outil.",
+              "Mise en place de pipelines GitLab CI avec tests unitaires et d'intégration, puis livraison de l'outil sur plus de 100 serveurs, en remplacement des audits manuels."
+            ]
+          },
+          {
+            "name": "Pratiques AppSec à l'échelle du service",
+            "highlights": [
+              "Évaluation des pratiques de sécurité de 15 équipes de développement web, de 5 à 15 développeurs chacune.",
+              "Pilotage de l'adoption des bonnes pratiques de développement sécurisé, fondées sur l'OWASP Top 10, auprès de 5 de ces équipes.",
+              "État de l'art des outils SAST, SCA et DAST, et preuves de concept avec SonarQube, OWASP Dependency-Check et OWASP ZAP.",
+              "Déploiement d'instances SonarQube et OWASP Dependency-Check pour l'ensemble du service, intégrées aux pipelines GitLab CI de ces équipes."
+            ]
+          }
+        ]
+      },
+      {
+        "company": "HARDIS GROUP",
+        "logo": "/assets/logos/hardis-group.png",
+        "period": "Mai 2022 - Juillet 2022",
+        "title": "Stagiaire développeur Python/Node.js",
+        "location": "Seyssinet-Pariset, France",
+        "summary": [
+          "J'ai rejoint l'équipe R&D chargée du développement de la version web du logiciel de gestion d'entrepôt propriétaire de HARDIS GROUP. Ma mission consistait à automatiser sa traduction complète en 4 langues : français, anglais, espagnol et néerlandais."
+        ],
+        "highlights": [
+          "Développement d'un client Python pour l'API REST de Weblate et d'une interface de gestion des données de traduction.",
+          "Création de modules Node.js qui génèrent dynamiquement les dictionnaires i18n à partir des données Weblate.",
+          "Conteneurisation des outils avec Docker et intégration dans les pipelines GitLab CI."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Samy DIFALLAH | Portfolio",
+    "tagline": "Cybersecurity Engineer",
+    "pitch": "I build tools that make security automated and provable, for industries where compliance is not optional.",
+    "current_location": "Grenoble, France",
+    "section_title": "Professional Experience",
+    "footer": "Developed by Claude Code",
+    "jobs": [
+      {
+        "company": "Bull",
+        "logo": "/assets/logos/bull.png",
+        "period": "July 2025 - Present",
+        "title": "PSIRT Engineer",
+        "location": "Échirolles, France",
+        "summary": [
+          "Consulting mission within Bull's PSIRT, where I'm leading the move to a modular, automated vulnerability management platform covering 70+ products, in line with the EU Cyber Resilience Act (CRA)."
+        ],
+        "highlights": [
+          "Designed an event-driven architecture of ~15-20 Python microservices containerized with Docker, with a clear separation of responsibilities.",
+          "Integrated OWASP Dependency-Track through its REST API as the engine for SBOM-based vulnerability analysis.",
+          "Covered hardware, firmware and mainly software products, drawing on NVD, RHSA and GHSA vulnerability data, the Trivy and Syft analyzers, and CycloneDX SBOMs.",
+          "Automated vulnerability prioritization by combining EPSS scores with the KEV catalog.",
+          "Automated generation of customer security advisories in the CSAF 2.0 format.",
+          "Wrote Helm charts following Bull's Software Factory standards and deployed the services to a Kubernetes cluster."
+        ]
+      },
+      {
+        "company": "Framatome",
+        "logo": "/assets/logos/framatome.png",
+        "period": "October 2024 - April 2025",
+        "title": "Software & Cybersecurity Engineer",
+        "location": "Meylan, France",
+        "summary": [
+          "Consulting mission at Framatome: I joined a nuclear instrumentation & control team to bring quality and security assurance to a Python application used to design electrical cabinets."
+        ],
+        "highlights": [
+          "Wrote unit, integration, security and validation test specifications based on the Software Requirements Specification (SRS).",
+          "Implemented 100+ unit and integration tests with pytest in compliance with Framatome's development policies, raising SRS and code coverage from ~10% to 100%.",
+          "Built database security and integrity tests with SQLAlchemy.",
+          "Set up static code analysis with ruff, mypy and bandit."
+        ]
+      },
+      {
+        "company": "EDF",
+        "logo": "/assets/logos/edf.png",
+        "period": "September 2022 - August 2024",
+        "title": "Cybersecurity Engineer Apprentice",
+        "location": "Saint-Martin-le-Vinoux, France",
+        "summary": [
+          "I did my apprenticeship in the industrial IT department of EDF's Hydraulic Engineering Center, which runs 3 datacenters, 4,500 servers and 90 applications supporting critical infrastructure."
+        ],
+        "missions": [
+          {
+            "name": "Security audit tool for Linux servers",
+            "highlights": [
+              "Turned CIS Benchmarks hardening requirements into automated checks following EDF's security policies.",
+              "Built Ansible roles per control scope that run Lynis, a widely used open-source industry tool, on the audited hosts, extended with custom Bash tests.",
+              "Developed Python Ansible plugins for dynamic inventory, secure secrets handling and SSH key exchange, plus a CLI to run the tool.",
+              "Set up GitLab CI pipelines with unit and integration tests, and delivered the tool for 100+ servers in place of manual audits."
+            ]
+          },
+          {
+            "name": "AppSec practices across the department",
+            "highlights": [
+              "Assessed the security practices of 15 web development teams of 5-15 developers each.",
+              "Spearheaded secure development best practices based on the OWASP Top 10 within 5 of these teams.",
+              "Benchmarked SAST, SCA and DAST tools, with proofs of concept for SonarQube, OWASP Dependency-Check and OWASP ZAP.",
+              "Deployed department-wide SonarQube and OWASP Dependency-Check instances and integrated them into those teams' GitLab CI pipelines."
+            ]
+          }
+        ]
+      },
+      {
+        "company": "HARDIS GROUP",
+        "logo": "/assets/logos/hardis-group.png",
+        "period": "May 2022 - July 2022",
+        "title": "Python/Node.js Developer Intern",
+        "location": "Seyssinet-Pariset, France",
+        "summary": [
+          "I joined the R&D team building the web version of HARDIS GROUP's proprietary warehouse management system (WMS). My mission was to automate its full translation into 4 languages (French, English, Spanish, Dutch)."
+        ],
+        "highlights": [
+          "Developed a Python client for the Weblate REST API and an interface for managing translation data.",
+          "Built Node.js modules that dynamically generate i18n dictionaries from Weblate data.",
+          "Containerized the tooling with Docker and integrated it into GitLab CI pipelines."
+        ]
+      }
+    ]
+  }
+}
