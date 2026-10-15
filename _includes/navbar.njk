@@ -5,11 +5,11 @@
                 <a href="{% if lang == 'en' %}/{% else %}/{{ lang }}/{% endif %}" class="font-bold hover:opacity-80">Samy DIFALLAH</a>
             </div>
             <div class="lang-switcher">
-                <button class="relative flex items-center bg-stone-800/50 rounded-lg px-1 py-1 border border-stone-700/50 hover:border-stone-600/50 transition-all duration-300">
-                    <a href="/fr/" data-lang="fr" class="lang-option{% if lang == 'fr' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">FR</a>
-                    <span class="w-px h-4 bg-stone-600/50 mx-1"></span>
-                    <a href="/" data-lang="en" class="lang-option{% if lang == 'en' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">EN</a>
-                </button>
+                <div role="group" aria-label="{{ translations[lang].language_switcher }}" class="relative flex items-center bg-stone-800/50 rounded-lg px-1 py-1 border border-stone-700/50 hover:border-stone-600/50 transition-all duration-300">
+                    <a href="/fr/" data-lang="fr" hreflang="fr" lang="fr" aria-label="Français"{% if lang == 'fr' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'fr' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">FR</a>
+                    <span class="w-px h-4 bg-stone-600/50 mx-1" aria-hidden="true"></span>
+                    <a href="/" data-lang="en" hreflang="en" lang="en" aria-label="English"{% if lang == 'en' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'en' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">EN</a>
+                </div>
             </div>
         </div>
     </div>
