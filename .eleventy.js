@@ -5,6 +5,8 @@ const icons = require("./_data/icons.js");
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
 
+    eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
+
     // Inline SVG icon, sized like a Font Awesome glyph: 1em tall, colored by currentColor
     eleventyConfig.addShortcode("icon", function(name, classes = "") {
         const icon = icons[name];
