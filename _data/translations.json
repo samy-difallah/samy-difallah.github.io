@@ -19,7 +19,7 @@
         "highlights": [
           "Conception d'une architecture événementielle de 15 à 20 microservices Python conteneurisés avec Docker, aux responsabilités clairement séparées.",
           "Intégration d'OWASP Dependency-Track, via son API REST, comme moteur d'analyse des vulnérabilités à partir des SBOM.",
-          "Couverture de produits matériels, firmware et surtout logiciels, à partir des bases de vulnérabilités NVD, RHSA et GHSA, des analyseurs Trivy et Syft et de SBOM au format CycloneDX.",
+          "Couverture de produits matériels, firmware et surtout logiciels, à partir des bases de vulnérabilités NVD, RHSA et GHSA, des scanners Trivy et Grype et de SBOM CycloneDX générés avec Syft.",
           "Automatisation de la priorisation des vulnérabilités en croisant les scores EPSS et le catalogue KEV.",
           "Génération automatisée des bulletins de sécurité destinés aux clients, au format CSAF 2.0.",
           "Rédaction de charts Helm conformes aux standards de la Software Factory de Bull et déploiement sur un cluster Kubernetes."
@@ -108,7 +108,7 @@
         "highlights": [
           "Designed an event-driven architecture of ~15-20 Python microservices containerized with Docker, with a clear separation of responsibilities.",
           "Integrated OWASP Dependency-Track through its REST API as the engine for SBOM-based vulnerability analysis.",
-          "Covered hardware, firmware and mainly software products, drawing on NVD, RHSA and GHSA vulnerability data, the Trivy and Syft analyzers, and CycloneDX SBOMs.",
+          "Covered hardware, firmware and mainly software products, drawing on NVD, RHSA and GHSA vulnerability data, the Trivy and Grype scanners, and CycloneDX SBOMs generated with Syft.",
           "Automated vulnerability prioritization by combining EPSS scores with the KEV catalog.",
           "Automated generation of customer security advisories in the CSAF 2.0 format.",
           "Wrote Helm charts following Bull's Software Factory standards and deployed the services to a Kubernetes cluster."
