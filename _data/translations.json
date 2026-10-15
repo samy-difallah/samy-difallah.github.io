@@ -14,7 +14,8 @@
         "title": "Ingénieur PSIRT",
         "location": "Échirolles, France",
         "summary": [
-          "Mission de conseil au sein du PSIRT de Bull, où je pilote la refonte de la gestion des vulnérabilités en une plateforme modulaire et automatisée couvrant plus de 70 produits, conformément au règlement européen Cyber Resilience Act (CRA)."
+          "Mission de conseil au sein du PSIRT de Bull. La plateforme actuelle de gestion des vulnérabilités des produits est un système monolithique complexe, difficile à maintenir et qui ne prend pas en charge des standards comme CSAF pour les bulletins de sécurité ou CycloneDX pour les SBOM.",
+          "Je pilote sa refonte en une plateforme modulaire et automatisée couvrant plus de 70 produits, conformément au règlement européen Cyber Resilience Act (CRA)."
         ],
         "highlights": [
           "Conception d'une architecture événementielle de 15 à 20 microservices Python conteneurisés avec Docker, aux responsabilités clairement séparées.",
@@ -53,6 +54,7 @@
         "missions": [
           {
             "name": "Outil d'audit de sécurité des serveurs Linux",
+            "context": "Avant leur mise en service dans l'infrastructure d'EDF, les images Linux devaient passer un audit de durcissement. Réalisés à la main, machine par machine, ces audits étaient chronophages. J'ai conçu un outil qui les automatise sur plusieurs machines en parallèle.",
             "highlights": [
               "Transposition des exigences de durcissement des CIS Benchmarks en contrôles automatisés, conformes aux politiques de sécurité d'EDF.",
               "Développement de rôles Ansible, un par périmètre de contrôle, chargés d'exécuter sur les serveurs audités Lynis, un outil d'audit open source de référence, complété par des tests spécifiques écrits en Bash.",
@@ -62,6 +64,7 @@
           },
           {
             "name": "Pratiques AppSec à l'échelle du service",
+            "context": "Lorsque je suis arrivé, le service ne disposait d'aucune pratique commune de sécurité applicative et devait se préparer à l'entrée en vigueur de la directive NIS 2.",
             "highlights": [
               "Évaluation des pratiques de sécurité de 15 équipes de développement web, de 5 à 15 développeurs chacune.",
               "Pilotage de l'adoption des bonnes pratiques de développement sécurisé, fondées sur l'OWASP Top 10, auprès de 5 de ces équipes.",
@@ -103,7 +106,8 @@
         "title": "PSIRT Engineer",
         "location": "Échirolles, France",
         "summary": [
-          "Consulting mission within Bull's PSIRT, where I'm leading the move to a modular, automated vulnerability management platform covering 70+ products, in line with the EU Cyber Resilience Act (CRA)."
+          "Consulting mission within Bull's PSIRT. The existing product vulnerability management platform is a complex monolith that is hard to maintain and doesn't support standards such as CSAF for security advisories or CycloneDX for SBOMs.",
+          "I'm leading its redesign into a modular, automated platform covering 70+ products, in line with the EU Cyber Resilience Act (CRA)."
         ],
         "highlights": [
           "Designed an event-driven architecture of ~15-20 Python microservices containerized with Docker, with a clear separation of responsibilities.",
@@ -142,6 +146,7 @@
         "missions": [
           {
             "name": "Security audit tool for Linux servers",
+            "context": "Every Linux image had to pass a hardening audit before going into EDF's infrastructure. These audits were run by hand, one machine at a time, which took a lot of time. I designed a tool that automates them across many machines in parallel.",
             "highlights": [
               "Turned CIS Benchmarks hardening requirements into automated checks following EDF's security policies.",
               "Built Ansible roles per control scope that run Lynis, a widely used open-source industry tool, on the audited hosts, extended with custom Bash tests.",
@@ -151,6 +156,7 @@
           },
           {
             "name": "AppSec practices across the department",
+            "context": "When I joined, the department had no shared application security practices and needed to prepare for the upcoming NIS 2 directive.",
             "highlights": [
               "Assessed the security practices of 15 web development teams of 5-15 developers each.",
               "Spearheaded secure development best practices based on the OWASP Top 10 within 5 of these teams.",

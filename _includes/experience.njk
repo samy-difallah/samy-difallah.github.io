@@ -30,6 +30,9 @@
                     {% if job.missions %}
                     {% for mission in job.missions %}
                     <h4 class="mt-8 mb-3 font-semibold text-stone-100">{{ mission.name }}</h4>
+                    {% if mission.context %}
+                    <p class="mb-3 text-stone-400 leading-relaxed">{{ mission.context }}</p>
+                    {% endif %}
                     <ul class="list-disc pl-5 space-y-2.5 text-stone-300 leading-relaxed marker:text-stone-500">
                         {% for highlight in mission.highlights %}
                         <li>{{ highlight }}</li>
