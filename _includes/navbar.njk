@@ -26,9 +26,6 @@
                     e.preventDefault();
                 } else {
                     localStorage.setItem('scrollPosition', window.scrollY);
-                    // is-open reflects the target state, even mid-animation
-                    const openJobs = [...document.querySelectorAll('details.group.is-open')].map(details => details.dataset.job);
-                    localStorage.setItem('openJobs', JSON.stringify(openJobs));
                 }
             });
         });

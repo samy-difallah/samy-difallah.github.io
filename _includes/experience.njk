@@ -58,9 +58,12 @@
     {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-        // Reopen the experiences left open before a language switch.
-        // Runs before the scroll position is restored, so it lands on the right spot.
-        const openJobs = JSON.parse(localStorage.getItem('openJobs') || '[]');
+        // Open experiences are kept for the tab session, so they survive a refresh or a language switch.
+        // Restored before the scroll position, so the page lands on the right spot.
+        let openJobs = [];
+        try {
+            openJobs = JSON.parse(sessionStorage.getItem('openJobs') || '[]');
+        } catch {}
         openJobs.forEach((job) => {
             const details = document.querySelector(`details.group[data-job="${job}"]`);
             if (details) {
@@ -68,7 +71,14 @@
                 details.classList.add('is-open');
             }
         });
-        localStorage.removeItem('openJobs');
+
+        // is-open reflects the target state, even mid-animation
+        const saveOpenJobs = () => {
+            const jobs = [...document.querySelectorAll('details.group.is-open')].map((details) => details.dataset.job);
+            try {
+                sessionStorage.setItem('openJobs', JSON.stringify(jobs));
+            } catch {}
+        };
 
         document.querySelectorAll('details.group').forEach((details) => {
             const summary = details.querySelector('summary');
@@ -79,6 +89,7 @@
             summary.addEventListener('click', (event) => {
                 const opening = !details.open || closing;
                 details.classList.toggle('is-open', opening);
+                saveOpenJobs();
 
                 if (reduceMotion.matches) {
                     return;
