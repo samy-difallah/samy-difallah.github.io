@@ -1,0 +1,74 @@
+<section id="skills" class="scroll-mt-20 pb-20 max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-semibold text-center mb-12">{{ translations[lang].skills_title }}</h2>
+    <div class="flex justify-center mb-10">
+        <div role="tablist" aria-label="{{ translations[lang].skills_title }}" class="flex items-center bg-stone-800/50 rounded-lg p-1 border border-stone-700/50">
+            {% for tab in translations[lang].skills %}
+            <button type="button" role="tab" id="skills-tab-{{ loop.index0 }}" aria-controls="skills-panel-{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" class="skills-tab px-4 py-1.5 text-sm font-medium rounded-md transition-colors duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ tab.name }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    {% for tab in translations[lang].skills %}
+    <div role="tabpanel" id="skills-panel-{{ loop.index0 }}" aria-labelledby="skills-tab-{{ loop.index0 }}" class="grid gap-6 sm:grid-cols-2"{% if not loop.first %} hidden{% endif %}>
+        {% for group in tab.groups %}
+        <div class="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
+            <h3 class="mb-5 text-lg font-semibold">{{ group.name }}</h3>
+            <ul class="space-y-3">
+                {% for skill in group.skills %}
+                <li class="rounded-md border border-zinc-700/50 bg-zinc-800/60 px-4 py-3">
+                    <span class="block font-medium text-stone-100">{{ skill.name }}</span>
+                    <span class="block text-sm text-stone-400">{{ skill.detail }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</section>
+
+<script>
+    {
+        const tabs = [...document.querySelectorAll('#skills [role="tab"]')];
+
+        const select = (tab) => {
+            tabs.forEach((other) => {
+                const selected = other === tab;
+                other.setAttribute('aria-selected', selected);
+                other.tabIndex = selected ? 0 : -1;
+                document.getElementById(other.getAttribute('aria-controls')).hidden = !selected;
+            });
+            try {
+                sessionStorage.setItem('skillsTab', tabs.indexOf(tab));
+            } catch {}
+        };
+
+        // The selected tab is kept for the tab session, so it survives a refresh or a language switch.
+        // Restored before the scroll position, so the page lands on the right spot.
+        let savedTab = null;
+        try {
+            savedTab = tabs[parseInt(sessionStorage.getItem('skillsTab'))];
+        } catch {}
+        if (savedTab) {
+            select(savedTab);
+        }
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => select(tab));
+
+            // Arrow keys move between tabs, as in the WAI-ARIA tabs pattern
+            tab.addEventListener('keydown', (event) => {
+                const next = {
+                    ArrowRight: tabs[(index + 1) % tabs.length],
+                    ArrowLeft: tabs[(index - 1 + tabs.length) % tabs.length],
+                    Home: tabs[0],
+                    End: tabs[tabs.length - 1],
+                }[event.key];
+                if (next) {
+                    event.preventDefault();
+                    select(next);
+                    next.focus();
+                }
+            });
+        });
+    }
+</script>

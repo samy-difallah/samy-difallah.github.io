@@ -108,6 +108,51 @@
         "period": "Septembre 2019 - Juin 2022",
         "location": "Grenoble, France"
       }
+    ],
+    "skills_title": "Compétences",
+    "skills": [
+      {
+        "name": "Cybersécurité",
+        "groups": [
+          {
+            "name": "Sécurité défensive",
+            "skills": [
+              { "name": "Gestion des vulnérabilités", "detail": "OWASP Dependency-Track, Trivy, priorisation EPSS & KEV" },
+              { "name": "Analyse de SBOM", "detail": "CycloneDX, Syft" },
+              { "name": "Durcissement Linux", "detail": "Lynis, LinPEAS" }
+            ]
+          },
+          {
+            "name": "Gouvernance & conformité",
+            "skills": [
+              { "name": "Conformité réglementaire", "detail": "Cyber Resilience Act, NIS 2" },
+              { "name": "Politiques de sécurité", "detail": "Définition & mise en œuvre" },
+              { "name": "Référentiels de sécurité", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Technique",
+        "groups": [
+          {
+            "name": "Développement",
+            "skills": [
+              { "name": "Scripting", "detail": "Python, Bash" },
+              { "name": "Conception d'architecture", "detail": "Microservices événementiels" },
+              { "name": "Intégration d'API REST", "detail": "FastAPI, Flask" }
+            ]
+          },
+          {
+            "name": "DevOps & infrastructure",
+            "skills": [
+              { "name": "Conteneurs & orchestration", "detail": "Docker, Kubernetes, Helm" },
+              { "name": "Automatisation & configuration", "detail": "Ansible" },
+              { "name": "Gestion de versions & collaboration", "detail": "GitHub" }
+            ]
+          }
+        ]
+      }
     ]
   },
   "en": {
@@ -218,6 +263,51 @@
         "degree": "Bachelor's Degree in Mathematics and Computer Science",
         "period": "September 2019 - June 2022",
         "location": "Grenoble, France"
+      }
+    ],
+    "skills_title": "Skills",
+    "skills": [
+      {
+        "name": "Cybersecurity",
+        "groups": [
+          {
+            "name": "Defensive Security",
+            "skills": [
+              { "name": "Vulnerability management", "detail": "OWASP Dependency-Track, Trivy, EPSS & KEV prioritization" },
+              { "name": "SBOM analysis", "detail": "CycloneDX, Syft" },
+              { "name": "Linux hardening", "detail": "Lynis, LinPEAS" }
+            ]
+          },
+          {
+            "name": "Governance & Compliance",
+            "skills": [
+              { "name": "Regulatory compliance", "detail": "Cyber Resilience Act, NIS 2" },
+              { "name": "Security policies", "detail": "Definition & implementation" },
+              { "name": "Security standards", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Technical",
+        "groups": [
+          {
+            "name": "Development",
+            "skills": [
+              { "name": "Scripting", "detail": "Python, Bash" },
+              { "name": "Architecture design", "detail": "Event-driven microservices" },
+              { "name": "REST API integration", "detail": "FastAPI, Flask" }
+            ]
+          },
+          {
+            "name": "DevOps & Infrastructure",
+            "skills": [
+              { "name": "Containers & orchestration", "detail": "Docker, Kubernetes, Helm" },
+              { "name": "Automation & Configuration", "detail": "Ansible" },
+              { "name": "Version control & collaboration", "detail": "GitHub" }
+            ]
+          }
+        ]
       }
     ]
   }
