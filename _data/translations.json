@@ -91,6 +91,23 @@
           "Conteneurisation des outils avec Docker et intégration dans les pipelines GitLab CI."
         ]
       }
+    ],
+    "education_title": "Formation",
+    "education": [
+      {
+        "school": "Grenoble INP - Ensimag",
+        "logo": "/assets/logos/grenoble-inp-ensimag.png",
+        "degree": "Master Réseaux, Systèmes, Cybersécurité",
+        "period": "Septembre 2022 - Juin 2024",
+        "location": "Grenoble, France"
+      },
+      {
+        "school": "Université Grenoble Alpes",
+        "logo": "/assets/logos/uga.png",
+        "degree": "Licence Mathématiques et Informatique",
+        "period": "Septembre 2019 - Juin 2022",
+        "location": "Grenoble, France"
+      }
     ]
   },
   "en": {
@@ -184,6 +201,23 @@
           "Built Node.js modules that dynamically generate i18n dictionaries from Weblate data.",
           "Containerized the tooling with Docker and integrated it into GitLab CI pipelines."
         ]
+      }
+    ],
+    "education_title": "Education",
+    "education": [
+      {
+        "school": "Grenoble INP - Ensimag",
+        "logo": "/assets/logos/grenoble-inp-ensimag.png",
+        "degree": "Master's Degree in Networks, Systems and Cybersecurity",
+        "period": "September 2022 - June 2024",
+        "location": "Grenoble, France"
+      },
+      {
+        "school": "Université Grenoble Alpes",
+        "logo": "/assets/logos/uga.png",
+        "degree": "Bachelor's Degree in Mathematics and Computer Science",
+        "period": "September 2019 - June 2022",
+        "location": "Grenoble, France"
       }
     ]
   }
