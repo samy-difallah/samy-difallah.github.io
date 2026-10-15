@@ -44,22 +44,7 @@
             color: rgb(255 255 255);
         }
     </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        accent: '#3b82f6',
-                        accentHover: '#2563eb',
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body class="bg-zinc-950 text-stone-100 font-sans">
     {{ content | safe }}
