@@ -17,7 +17,7 @@
         "location": "Échirolles, France",
         "summary": [
           "Mission de conseil au sein du PSIRT de Bull. La plateforme actuelle de gestion des vulnérabilités des produits est un système monolithique complexe, difficile à maintenir et qui ne prend pas en charge des standards comme CSAF pour les bulletins de sécurité ou CycloneDX pour les SBOM.",
-          "Je pilote sa refonte en une plateforme modulaire et automatisée couvrant plus de 70 produits, conformément au règlement européen Cyber Resilience Act (CRA)."
+          "Ma mission consiste à la refondre en une plateforme modulaire et automatisée couvrant plus de 70 produits, conformément au règlement européen Cyber Resilience Act (CRA)."
         ],
         "highlights": [
           "Conception d'une architecture événementielle de 15 à 20 microservices Python conteneurisés avec Docker, aux responsabilités clairement séparées.",
@@ -177,7 +177,7 @@
         "location": "Échirolles, France",
         "summary": [
           "Consulting mission within Bull's PSIRT. The existing product vulnerability management platform is a complex monolith that is hard to maintain and doesn't support standards such as CSAF for security advisories or CycloneDX for SBOMs.",
-          "I'm leading its redesign into a modular, automated platform covering 70+ products, in line with the EU Cyber Resilience Act (CRA)."
+          "My mission is to redesign it into a modular, automated platform covering 70+ products, in line with the EU Cyber Resilience Act (CRA)."
         ],
         "highlights": [
           "Designed an event-driven architecture of ~15-20 Python microservices containerized with Docker, with a clear separation of responsibilities.",
@@ -229,7 +229,7 @@
             "context": "When I joined, the department had no shared application security practices and needed to prepare for the upcoming NIS 2 directive.",
             "highlights": [
               "Assessed the security practices of 15 web development teams of 5-15 developers each.",
-              "Spearheaded secure development best practices based on the OWASP Top 10 within 5 of these teams.",
+              "Led the adoption of secure development best practices based on the OWASP Top 10 within 5 of these teams.",
               "Benchmarked SAST, SCA and DAST tools, with proofs of concept for SonarQube, OWASP Dependency-Check and OWASP ZAP.",
               "Deployed department-wide SonarQube and OWASP Dependency-Check instances and integrated them into those teams' GitLab CI pipelines."
             ]
