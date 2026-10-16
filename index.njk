@@ -1,17 +1,42 @@
 ---
-layout: base.njk
+layout: null
 lang: en
 permalink: index.html
 ---
 
-{% include "navbar.njk" %}
-
-{% include "hero.njk" %}
-
-{% include "experience.njk" %}
-
-{% include "skills.njk" %}
-
-{% include "education.njk" %}
-
-{% include "footer.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ translations.en.title }}</title>
+{% include "meta.njk" %}
+    <style>
+        html {
+            background-color: #09090b;
+        }
+    </style>
+    <script>
+        // Send visitors to their language: their own FR/EN choice first, then the browser's language.
+        // replace() keeps this page out of the history, so Back doesn't bounce forward again.
+        {
+            let lang = null;
+            try {
+                lang = localStorage.getItem('lang');
+            } catch {}
+            if (lang !== 'en' && lang !== 'fr') {
+                lang = navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+            }
+            location.replace(`/${lang}/${location.search}${location.hash}`);
+        }
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
+</head>
+<body>
+    <noscript>
+        <p><a href="/en/">English</a> · <a href="/fr/">Français</a></p>
+    </noscript>
+</body>
+</html>

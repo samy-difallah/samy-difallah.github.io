@@ -4,28 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or translations[lang].title }}</title>
-    <meta name="description" content="{{ translations[lang].pitch }}">
     {% if noindex %}
     <meta name="robots" content="noindex">
     {% else %}
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="alternate" hreflang="en" href="{{ site.url }}/">
-    <link rel="alternate" hreflang="fr" href="{{ site.url }}/fr/">
-    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
     {% endif %}
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ translations[lang].title }}">
-    <meta property="og:description" content="{{ translations[lang].pitch }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:locale" content="{% if lang == 'fr' %}fr_FR{% else %}en_US{% endif %}">
-    <meta property="og:locale:alternate" content="{% if lang == 'fr' %}en_US{% else %}fr_FR{% endif %}">
-    <meta property="og:image" content="{{ site.url }}/assets/og/og-{{ lang }}.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Samy DIFALLAH, {{ translations[lang].tagline }}">
-    <meta name="twitter:card" content="summary_large_image">
+{% include "meta.njk" %}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         html {

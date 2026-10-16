@@ -1,17 +1,16 @@
 ---
-layout: null
-permalink: en/index.html
+layout: base.njk
+lang: en
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Samy DIFALLAH | Portfolio</title>
-    <link rel="canonical" href="/">
-    <meta http-equiv="refresh" content="0; url=/">
-</head>
-<body>
-    <p>Redirecting to <a href="/">/</a>...</p>
-</body>
-</html>
+{% include "navbar.njk" %}
+
+{% include "hero.njk" %}
+
+{% include "experience.njk" %}
+
+{% include "skills.njk" %}
+
+{% include "education.njk" %}
+
+{% include "footer.njk" %}

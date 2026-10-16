@@ -16,16 +16,25 @@ eleventyComputed:
         <h1 class="text-7xl sm:text-8xl font-bold mb-8">404</h1>
         <p class="text-2xl font-semibold">{{ t.not_found_title }}</p>
         <p class="max-w-md text-stone-300 leading-relaxed mt-4">{{ t.not_found_message }}</p>
-        <a href="{% if language == 'en' %}/{% else %}/{{ language }}/{% endif %}" class="mt-10 rounded-lg bg-accent hover:bg-accentHover px-5 py-2.5 text-sm font-medium text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">{{ t.not_found_back }}</a>
+        <a href="/{{ language }}/" class="mt-10 rounded-lg bg-accent hover:bg-accentHover px-5 py-2.5 text-sm font-medium text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">{{ t.not_found_back }}</a>
     </div>
     {% endfor %}
 </main>
 
 <script>
     {
-        // A missing page under /fr/ means the visitor was on the French site; otherwise follow the browser
-        const french = location.pathname.startsWith('/fr/') || navigator.language.toLowerCase().startsWith('fr');
-        if (french) {
+        // A missing page under /fr/ or /en/ tells which site the visitor was on;
+        // otherwise, same order as the root page: their own FR/EN choice, then the browser's language
+        let lang = location.pathname.match(/^\/(en|fr)\//)?.[1];
+        if (!lang) {
+            try {
+                lang = localStorage.getItem('lang');
+            } catch {}
+        }
+        if (lang !== 'en' && lang !== 'fr') {
+            lang = navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        }
+        if (lang === 'fr') {
             document.querySelector('[data-lang="en"]').hidden = true;
             document.querySelector('[data-lang="fr"]').hidden = false;
             document.documentElement.lang = 'fr';
