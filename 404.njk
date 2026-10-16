@@ -1,0 +1,35 @@
+---
+layout: base.njk
+lang: en
+permalink: 404.html
+noindex: true
+eleventyComputed:
+  title: "{{ translations.en.not_found_title }} | Samy DIFALLAH"
+---
+
+{# GitHub Pages serves this single page for every missing URL, so the language is picked in the browser #}
+<main class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
+    {% for language in ["en", "fr"] %}
+    {% set t = translations[language] %}
+    <div data-lang="{{ language }}" lang="{{ language }}" class="flex flex-col items-center"{% if language != "en" %} hidden{% endif %}>
+        <p class="text-sm uppercase tracking-widest text-stone-400 mb-3">Samy DIFALLAH</p>
+        <h1 class="text-7xl sm:text-8xl font-bold mb-8">404</h1>
+        <p class="text-2xl font-semibold">{{ t.not_found_title }}</p>
+        <p class="max-w-md text-stone-300 leading-relaxed mt-4">{{ t.not_found_message }}</p>
+        <a href="{% if language == 'en' %}/{% else %}/{{ language }}/{% endif %}" class="mt-10 rounded-lg bg-accent hover:bg-accentHover px-5 py-2.5 text-sm font-medium text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950">{{ t.not_found_back }}</a>
+    </div>
+    {% endfor %}
+</main>
+
+<script>
+    {
+        // A missing page under /fr/ means the visitor was on the French site; otherwise follow the browser
+        const french = location.pathname.startsWith('/fr/') || navigator.language.toLowerCase().startsWith('fr');
+        if (french) {
+            document.querySelector('[data-lang="en"]').hidden = true;
+            document.querySelector('[data-lang="fr"]').hidden = false;
+            document.documentElement.lang = 'fr';
+            document.title = '{{ translations.fr.not_found_title }} | Samy DIFALLAH';
+        }
+    }
+</script>

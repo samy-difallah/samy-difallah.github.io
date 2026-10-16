@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ translations[lang].title }}</title>
+    <title>{{ title or translations[lang].title }}</title>
     <meta name="description" content="{{ translations[lang].pitch }}">
+    {% if noindex %}
+    <meta name="robots" content="noindex">
+    {% else %}
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="alternate" hreflang="en" href="{{ site.url }}/">
     <link rel="alternate" hreflang="fr" href="{{ site.url }}/fr/">
     <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+    {% endif %}
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
     <meta property="og:type" content="website">
