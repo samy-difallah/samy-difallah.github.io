@@ -7,6 +7,28 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
+    // Length of a role from "YYYY-MM" months, both counted, as LinkedIn does ("1 yr 4 mos").
+    // An ongoing role (no end) runs to the build date, so it grows with each deploy.
+    eleventyConfig.addFilter("duration", function(start, end, lang) {
+        const [startYear, startMonth] = start.split("-").map(Number);
+        const now = new Date();
+        const [endYear, endMonth] = end ? end.split("-").map(Number) : [now.getFullYear(), now.getMonth() + 1];
+        const total = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+        const years = Math.floor(total / 12);
+        const months = total % 12;
+        const units = lang === "fr"
+            ? { year: ["an", "ans"], month: ["mois", "mois"] }
+            : { year: ["yr", "yrs"], month: ["mo", "mos"] };
+        const parts = [];
+        if (years) {
+            parts.push(`${years} ${units.year[years > 1 ? 1 : 0]}`);
+        }
+        if (months) {
+            parts.push(`${months} ${units.month[months > 1 ? 1 : 0]}`);
+        }
+        return parts.join(" ");
+    });
+
     // Inline SVG icon, sized like a Font Awesome glyph: 1em tall, colored by currentColor
     eleventyConfig.addShortcode("icon", function(name, classes = "") {
         const icon = icons[name];

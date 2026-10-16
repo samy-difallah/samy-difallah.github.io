@@ -20,6 +20,9 @@
         "company": "Bull",
         "logo": "/assets/logos/bull.png",
         "period": "Juillet 2025 - Aujourd'hui",
+        "start": "2025-07",
+        "end": null,
+        "contract": "Consultant · agap2IT",
         "title": "Ingénieur PSIRT",
         "location": "Échirolles, France",
         "summary": [
@@ -39,6 +42,9 @@
         "company": "Framatome",
         "logo": "/assets/logos/framatome.png",
         "period": "Octobre 2024 - Avril 2025",
+        "start": "2024-10",
+        "end": "2025-04",
+        "contract": "Consultant · agap2IT",
         "title": "Ingénieur logiciel & cybersécurité",
         "location": "Meylan, France",
         "summary": [
@@ -55,6 +61,9 @@
         "company": "EDF",
         "logo": "/assets/logos/edf.png",
         "period": "Septembre 2022 - Août 2024",
+        "start": "2022-09",
+        "end": "2024-08",
+        "contract": "Alternance",
         "title": "Alternant ingénieur cybersécurité",
         "location": "Saint-Martin-le-Vinoux, France",
         "summary": [
@@ -87,6 +96,9 @@
         "company": "HARDIS GROUP",
         "logo": "/assets/logos/hardis-group.png",
         "period": "Mai 2022 - Juillet 2022",
+        "start": "2022-05",
+        "end": "2022-07",
+        "contract": "Stage",
         "title": "Stagiaire développeur Python/Node.js",
         "location": "Seyssinet-Pariset, France",
         "summary": [
@@ -187,6 +199,9 @@
         "company": "Bull",
         "logo": "/assets/logos/bull.png",
         "period": "July 2025 - Present",
+        "start": "2025-07",
+        "end": null,
+        "contract": "Consultant · agap2IT",
         "title": "PSIRT Engineer",
         "location": "Échirolles, France",
         "summary": [
@@ -206,6 +221,9 @@
         "company": "Framatome",
         "logo": "/assets/logos/framatome.png",
         "period": "October 2024 - April 2025",
+        "start": "2024-10",
+        "end": "2025-04",
+        "contract": "Consultant · agap2IT",
         "title": "Software & Cybersecurity Engineer",
         "location": "Meylan, France",
         "summary": [
@@ -222,6 +240,9 @@
         "company": "EDF",
         "logo": "/assets/logos/edf.png",
         "period": "September 2022 - August 2024",
+        "start": "2022-09",
+        "end": "2024-08",
+        "contract": "Apprenticeship",
         "title": "Cybersecurity Engineer Apprentice",
         "location": "Saint-Martin-le-Vinoux, France",
         "summary": [
@@ -254,6 +275,9 @@
         "company": "HARDIS GROUP",
         "logo": "/assets/logos/hardis-group.png",
         "period": "May 2022 - July 2022",
+        "start": "2022-05",
+        "end": "2022-07",
+        "contract": "Internship",
         "title": "Python/Node.js Developer Intern",
         "location": "Seyssinet-Pariset, France",
         "summary": [
