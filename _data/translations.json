@@ -119,7 +119,8 @@
             "skills": [
               { "name": "Gestion des vulnérabilités", "detail": "OWASP Dependency-Track, Trivy, priorisation EPSS & KEV" },
               { "name": "Analyse de SBOM", "detail": "CycloneDX, Syft" },
-              { "name": "Durcissement Linux", "detail": "Lynis, LinPEAS" }
+              { "name": "Durcissement Linux", "detail": "Lynis, LinPEAS" },
+              { "name": "Sécurité applicative", "detail": "SAST, SCA, DAST" }
             ]
           },
           {
@@ -127,7 +128,8 @@
             "skills": [
               { "name": "Conformité réglementaire", "detail": "Cyber Resilience Act, NIS 2" },
               { "name": "Politiques de sécurité", "detail": "Définition & mise en œuvre" },
-              { "name": "Référentiels de sécurité", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" }
+              { "name": "Référentiels de sécurité", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" },
+              { "name": "Sécurité des produits", "detail": "CSAF 2.0, VEX" }
             ]
           }
         ]
@@ -140,7 +142,8 @@
             "skills": [
               { "name": "Scripting", "detail": "Python, Bash" },
               { "name": "Conception d'architecture", "detail": "Microservices événementiels" },
-              { "name": "Intégration d'API REST", "detail": "FastAPI, Flask" }
+              { "name": "Intégration d'API REST", "detail": "FastAPI, Flask" },
+              { "name": "Tests & qualité du code", "detail": "pytest, ruff, mypy" }
             ]
           },
           {
@@ -148,7 +151,8 @@
             "skills": [
               { "name": "Conteneurs & orchestration", "detail": "Docker, Kubernetes, Helm" },
               { "name": "Automatisation & configuration", "detail": "Ansible" },
-              { "name": "Gestion de versions & collaboration", "detail": "GitHub" }
+              { "name": "Gestion de versions & collaboration", "detail": "GitHub, GitLab" },
+              { "name": "CI/CD", "detail": "GitHub Actions, GitLab CI" }
             ]
           }
         ]
@@ -275,7 +279,8 @@
             "skills": [
               { "name": "Vulnerability management", "detail": "OWASP Dependency-Track, Trivy, EPSS & KEV prioritization" },
               { "name": "SBOM analysis", "detail": "CycloneDX, Syft" },
-              { "name": "Linux hardening", "detail": "Lynis, LinPEAS" }
+              { "name": "Linux hardening", "detail": "Lynis, LinPEAS" },
+              { "name": "Application security", "detail": "SAST, SCA, DAST" }
             ]
           },
           {
@@ -283,7 +288,8 @@
             "skills": [
               { "name": "Regulatory compliance", "detail": "Cyber Resilience Act, NIS 2" },
               { "name": "Security policies", "detail": "Definition & implementation" },
-              { "name": "Security standards", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" }
+              { "name": "Security standards", "detail": "OWASP Top 10, CIS Benchmarks, ANSSI-BP-028" },
+              { "name": "Product security", "detail": "CSAF 2.0, VEX" }
             ]
           }
         ]
@@ -296,7 +302,8 @@
             "skills": [
               { "name": "Scripting", "detail": "Python, Bash" },
               { "name": "Architecture design", "detail": "Event-driven microservices" },
-              { "name": "REST API integration", "detail": "FastAPI, Flask" }
+              { "name": "REST API integration", "detail": "FastAPI, Flask" },
+              { "name": "Testing & code quality", "detail": "pytest, ruff, mypy" }
             ]
           },
           {
@@ -304,7 +311,8 @@
             "skills": [
               { "name": "Containers & orchestration", "detail": "Docker, Kubernetes, Helm" },
               { "name": "Automation & Configuration", "detail": "Ansible" },
-              { "name": "Version control & collaboration", "detail": "GitHub" }
+              { "name": "Version control & collaboration", "detail": "GitHub, GitLab" },
+              { "name": "CI/CD", "detail": "GitHub Actions, GitLab CI" }
             ]
           }
         ]
