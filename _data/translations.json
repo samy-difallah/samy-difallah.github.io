@@ -9,6 +9,7 @@
     "language_switcher": "Langue",
     "nav_label": "Sections",
     "nav_experience": "Expérience",
+    "nav_projects": "Projets",
     "nav_skills": "Compétences",
     "nav_education": "Formation",
     "footer": "Développé par Claude Code",
@@ -111,6 +112,15 @@
         ]
       }
     ],
+    "projects_title": "Projets",
+    "projects": [
+      {
+        "name": "Maat",
+        "description": "Un outil de priorisation des vulnérabilités qui classe les CVE selon leur exploitation (CISA KEV, EPSS) et justifie chaque verdict.",
+        "github": "https://github.com/samy-difallah/maat-vuln",
+        "pypi": "https://pypi.org/project/maat-vuln/"
+      }
+    ],
     "education_title": "Formation",
     "education": [
       {
@@ -188,6 +198,7 @@
     "language_switcher": "Language",
     "nav_label": "Sections",
     "nav_experience": "Experience",
+    "nav_projects": "Projects",
     "nav_skills": "Skills",
     "nav_education": "Education",
     "footer": "Developed by Claude Code",
@@ -288,6 +299,15 @@
           "Built Node.js modules that dynamically generate i18n dictionaries from Weblate data.",
           "Containerized the tooling with Docker and integrated it into GitLab CI pipelines."
         ]
+      }
+    ],
+    "projects_title": "Projects",
+    "projects": [
+      {
+        "name": "Maat",
+        "description": "A vulnerability prioritization tool that ranks CVEs by exploitation (CISA KEV, EPSS) and explains every verdict.",
+        "github": "https://github.com/samy-difallah/maat-vuln",
+        "pypi": "https://pypi.org/project/maat-vuln/"
       }
     ],
     "education_title": "Education",

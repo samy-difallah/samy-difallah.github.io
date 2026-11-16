@@ -7,7 +7,7 @@
             {# Centred on the bar itself, since the name and the switcher on each side have different widths.
                Hidden on small screens, where those two already fill the bar #}
             <ul aria-label="{{ translations[lang].nav_label }}" class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium">
-                {% for section in ["experience", "skills", "education"] %}
+                {% for section in ["experience", "projects", "skills", "education"] %}
                 <li><a href="#{{ section }}" class="section-link text-stone-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">{{ translations[lang]["nav_" + section] }}</a></li>
                 {% endfor %}
             </ul>
