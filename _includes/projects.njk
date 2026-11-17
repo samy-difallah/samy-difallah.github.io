@@ -18,6 +18,13 @@
                 </span>
             </div>
             <p class="pt-4 text-stone-300 leading-relaxed">{{ project.description }}</p>
+            {% if project.tags %}
+            <ul class="mt-4 flex flex-wrap gap-2">
+                {% for tag in project.tags %}
+                <li class="rounded-md border border-zinc-700/50 bg-zinc-800/60 px-2.5 py-0.5 text-xs text-stone-300">{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
