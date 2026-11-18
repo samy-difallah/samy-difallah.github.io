@@ -25,3 +25,53 @@
     --color-accent: #3b82f6;
     --color-accentHover: #2563eb;
 }
+
+/* Not in a layer, so these win over Tailwind's utilities, as they did when inlined in base.njk */
+html {
+    scroll-behavior: smooth;
+    /* Mainly for the root redirect page, so it doesn't flash white before the redirect */
+    background-color: #09090b;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    main, section {
+        animation: fadeIn 0.6s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+.lang-option {
+    color: rgb(163 163 175);
+}
+
+.lang-option.active {
+    background-color: rgb(39 39 42);
+    color: rgb(255 255 255);
+}
+
+.lang-option:hover {
+    color: rgb(255 255 255);
+}
+
+.skills-tab {
+    color: rgb(163 163 175);
+}
+
+.skills-tab[aria-selected="true"] {
+    background-color: rgb(39 39 42);
+    color: rgb(255 255 255);
+}
+
+.skills-tab:hover {
+    color: rgb(255 255 255);
+}
+
+/* Aligns icons from the icon shortcode with the text, like a Font Awesome glyph */
+.icon {
+    vertical-align: -0.125em;
+}
