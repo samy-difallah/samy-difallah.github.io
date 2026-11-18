@@ -11,7 +11,7 @@ eleventyComputed:
 <main class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
     {% for language in ["en", "fr"] %}
     {% set t = translations[language] %}
-    <div data-lang="{{ language }}" lang="{{ language }}" class="flex flex-col items-center"{% if language != "en" %} hidden{% endif %}>
+    <div data-lang="{{ language }}" lang="{{ language }}" data-title="{{ t.not_found_title }} | Samy DIFALLAH" class="flex flex-col items-center"{% if language != "en" %} hidden{% endif %}>
         <p class="text-sm uppercase tracking-widest text-stone-400 mb-3">Samy DIFALLAH</p>
         <h1 class="font-serif text-7xl sm:text-8xl font-semibold mb-8">404</h1>
         <p class="text-2xl font-semibold">{{ t.not_found_title }}</p>
@@ -21,24 +21,4 @@ eleventyComputed:
     {% endfor %}
 </main>
 
-<script>
-    {
-        // A missing page under /fr/ or /en/ tells which site the visitor was on;
-        // otherwise, same order as the root page: their own FR/EN choice, then the browser's language
-        let lang = location.pathname.match(/^\/(en|fr)\//)?.[1];
-        if (!lang) {
-            try {
-                lang = localStorage.getItem('lang');
-            } catch {}
-        }
-        if (lang !== 'en' && lang !== 'fr') {
-            lang = navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
-        }
-        if (lang === 'fr') {
-            document.querySelector('[data-lang="en"]').hidden = true;
-            document.querySelector('[data-lang="fr"]').hidden = false;
-            document.documentElement.lang = 'fr';
-            document.title = '{{ translations.fr.not_found_title }} | Samy DIFALLAH';
-        }
-    }
-</script>
+<script src="/js/404.js"></script>

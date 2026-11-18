@@ -4,6 +4,7 @@ const icons = require("./_data/icons.js");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("js");
 
     eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
