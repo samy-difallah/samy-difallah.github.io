@@ -17,7 +17,7 @@
        Large screens: centred on the bar itself, since the name and the switcher have different widths #}
     <ul aria-label="{{ translations[lang].nav_label }}" class="max-w-sm mx-auto pb-2 flex justify-between text-xs font-medium sm:max-w-none sm:justify-center sm:gap-8 sm:text-sm lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-16 lg:items-center lg:pb-0">
         {% for section in ["experience", "projects", "skills", "education"] %}
-        <li><a href="#{{ section }}" class="section-link block py-1 text-stone-300 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">{{ translations[lang]["nav_" + section] }}</a></li>
+        <li><a href="#{{ section }}" class="section-link block py-1 text-stone-300 hover:text-white aria-[current=location]:text-white underline decoration-transparent aria-[current=location]:decoration-accent decoration-2 underline-offset-8 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">{{ translations[lang]["nav_" + section] }}</a></li>
         {% endfor %}
     </ul>
 </nav>
@@ -41,15 +41,86 @@
             });
         });
 
+        // Highlight the link of the section being read: the last one whose top has passed
+        // a third of the viewport, or the last one once the bottom of the page is reached,
+        // since a short final section never gets that far up
+        const sectionLinks = [...document.querySelectorAll('.section-link')];
+        let ticking = false;
+        // Index of the link clicked, kept highlighted while the page scrolls to its section,
+        // so the links in between don't light up one after the other
+        let clickedIndex = null;
+        let clickTimer;
+
+        function highlight(current) {
+            sectionLinks.forEach((link, i) => {
+                if (i === current) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function updateCurrentSection() {
+            ticking = false;
+            if (clickedIndex !== null) {
+                return;
+            }
+            // Looked up here, as this script runs before the sections below the navbar are parsed
+            const sections = sectionLinks.map(link => document.querySelector(link.getAttribute('href')));
+            const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            let current = -1;
+            sections.forEach((section, i) => {
+                if (section && section.getBoundingClientRect().top <= window.innerHeight / 3) {
+                    current = i;
+                }
+            });
+            if (atBottom) {
+                current = sections.length - 1;
+            }
+            highlight(current);
+        }
+
+        function requestUpdate() {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(updateCurrentSection);
+            }
+        }
+
+        // The scroll counts as finished once no scroll event has come for a short while
+        // (scrollend isn't supported everywhere yet)
+        function releaseClickedLinkLater() {
+            clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => {
+                clickedIndex = null;
+                requestUpdate();
+            }, 150);
+        }
+
         // Scroll to the section without adding #section to the URL
-        document.querySelectorAll('.section-link').forEach(link => {
+        sectionLinks.forEach((link, i) => {
             link.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
+                    clickedIndex = i;
+                    highlight(i);
+                    releaseClickedLinkLater();
                     target.scrollIntoView();
                 }
             });
         });
+
+        window.addEventListener('scroll', () => {
+            if (clickedIndex !== null) {
+                releaseClickedLinkLater();
+            } else {
+                requestUpdate();
+            }
+        }, { passive: true });
+        window.addEventListener('resize', requestUpdate);
+        document.addEventListener('DOMContentLoaded', requestUpdate);
+        window.addEventListener('load', requestUpdate);
     })();
 </script>
