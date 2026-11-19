@@ -40,9 +40,10 @@ module.exports = function(eleventyConfig) {
         if (!icon) {
             throw new Error(`Unknown icon: ${name}`);
         }
-        const width = +(icon.width / 512).toFixed(4);
+        const height = icon.height || 512;
+        const width = +(icon.width / height).toFixed(4);
         const classAttr = ` class="${["icon", classes].filter(Boolean).join(" ")}"`;
-        return `<svg${classAttr} viewBox="0 0 ${icon.width} 512" width="${width}em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="${icon.path}"/></svg>`;
+        return `<svg${classAttr} viewBox="0 0 ${icon.width} ${height}" width="${width}em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="${icon.path}"/></svg>`;
     });
 
     // Compile Tailwind at build time; templates are scanned for class names
