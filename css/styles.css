@@ -75,3 +75,18 @@ html {
 .icon {
     vertical-align: -0.125em;
 }
+
+/*
+ * Skill tabs with three groups: stacked on small screens, as on mobile; side
+ * by side from lg. The grid grows past the section (equal negative inline
+ * margins) so each card gets as close as possible to the width of a two-group
+ * card: (70rem content - 1.5rem gap) / 2 = 34.25rem, i.e. 3 x 34.25rem +
+ * 2 x 1.5rem = 105.75rem in all, capped to the viewport minus 3rem (side
+ * gutters plus room for a scrollbar).
+ */
+@media (width >= 64rem) {
+    .skills-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-inline: calc((100% - min(105.75rem, 100vw - 3rem)) / 2);
+    }
+}

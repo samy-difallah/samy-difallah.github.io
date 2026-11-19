@@ -155,6 +155,15 @@
             ]
           },
           {
+            "name": "Sécurité offensive",
+            "skills": [
+              { "name": "Tests d'intrusion", "detail": "Web, Linux" },
+              { "name": "Reconnaissance & énumération", "detail": "Nmap, Gobuster, ffuf" },
+              { "name": "Évaluation de vulnérabilités", "detail": "Analyse d'exploitabilité, Exploit-DB" },
+              { "name": "Analyse réseau", "detail": "Wireshark, failles protocolaires" }
+            ]
+          },
+          {
             "name": "Gouvernance & conformité",
             "skills": [
               { "name": "Conformité réglementaire", "detail": "Cyber Resilience Act, NIS 2" },
@@ -343,6 +352,15 @@
               { "name": "SBOM analysis", "detail": "CycloneDX, Syft" },
               { "name": "Linux hardening", "detail": "Lynis, LinPEAS" },
               { "name": "Application security", "detail": "SAST, SCA, DAST" }
+            ]
+          },
+          {
+            "name": "Offensive Security",
+            "skills": [
+              { "name": "Penetration testing", "detail": "Web, Linux" },
+              { "name": "Reconnaissance & enumeration", "detail": "Nmap, Gobuster, ffuf" },
+              { "name": "Vulnerability assessment", "detail": "Exploitability analysis, Exploit-DB" },
+              { "name": "Network analysis", "detail": "Wireshark, protocol weaknesses" }
             ]
           },
           {
