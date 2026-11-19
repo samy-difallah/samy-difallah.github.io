@@ -1,5 +1,31 @@
-<footer class="px-4 py-3 bg-zinc-950/80 border-t border-zinc-900">
-    <div class="max-w-6xl mx-auto flex justify-center items-center text-sm text-stone-400">
-        <span>© {{ currentYear }} Samy DIFALLAH · {{ translations[lang].footer }}</span>
+<footer class="px-4 sm:px-8 bg-zinc-950/80 border-t border-zinc-900 text-sm text-stone-400">
+    <div class="max-w-6xl mx-auto pt-10 pb-8 grid gap-8 md:grid-cols-3">
+        <div>
+            <p class="text-base font-semibold text-stone-100">Samy DIFALLAH</p>
+            <p class="mt-2 flex items-center gap-2">
+                {% icon "location-dot" %}
+                {{ translations[lang].current_location }}
+            </p>
+        </div>
+        <nav aria-labelledby="footer-links-title" class="md:justify-self-center">
+            <h2 id="footer-links-title" class="text-xs uppercase tracking-widest mb-3">{{ translations[lang].footer_links }}</h2>
+            <ul class="space-y-2">
+                {% for section in ["experience", "projects", "skills", "education"] %}
+                <li><a href="#{{ section }}" class="footer-section-link hover:text-white transition-colors duration-300">{{ translations[lang]["nav_" + section] }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="md:justify-self-end">
+            <h2 class="text-xs uppercase tracking-widest mb-3">{{ translations[lang].footer_social }}</h2>
+            <ul class="space-y-2">
+                <li><a href="https://github.com/samy-difallah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors duration-300">{% icon "github" %}GitHub</a></li>
+                <li><a href="{{ translations[lang].rootme_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors duration-300">{% icon "rootme" %}Root-Me</a></li>
+                <li><a href="https://www.linkedin.com/in/samy-difallah/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors duration-300">{% icon "linkedin" %}LinkedIn</a></li>
+                <li><a href="mailto:samy-difallah@outlook.com" class="inline-flex items-center gap-2 hover:text-white transition-colors duration-300">{% icon "envelope" %}samy-difallah@outlook.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="max-w-6xl mx-auto py-4 border-t border-zinc-900 text-center">
+        <span class="whitespace-nowrap">© {{ currentYear }} Samy DIFALLAH</span> · <span class="whitespace-nowrap">{{ translations[lang].footer }}</span>
     </div>
 </footer>
