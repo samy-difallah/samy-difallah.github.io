@@ -5,6 +5,10 @@ const icons = require("./_data/icons.js");
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("js");
+    // Google Search Console ownership check: copied as is, and not rendered as a template
+    // (which would also output googleca52e9b12bfefd25/index.html)
+    eleventyConfig.addPassthroughCopy("googleca52e9b12bfefd25.html");
+    eleventyConfig.ignores.add("googleca52e9b12bfefd25.html");
 
     eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
