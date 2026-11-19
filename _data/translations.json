@@ -390,7 +390,7 @@
             "name": "DevOps & Infrastructure",
             "skills": [
               { "name": "Containers & orchestration", "detail": "Docker, Kubernetes, Helm" },
-              { "name": "Automation & Configuration", "detail": "Ansible" },
+              { "name": "Automation & configuration", "detail": "Ansible" },
               { "name": "Version control & collaboration", "detail": "GitHub, GitLab" },
               { "name": "CI/CD", "detail": "GitHub Actions, GitLab CI" }
             ]
