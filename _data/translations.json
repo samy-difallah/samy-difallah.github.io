@@ -122,7 +122,8 @@
         "description": "Un outil de priorisation des vulnérabilités qui classe les CVE selon leur exploitation réelle et justifie chaque verdict.",
         "tags": ["Python", "CLI", "EPSS", "CISA KEV"],
         "github": "https://github.com/samy-difallah/maat-vuln",
-        "pypi": "https://pypi.org/project/maat-vuln/"
+        "pypi": "https://pypi.org/project/maat-vuln/",
+        "docs": "https://maat-vuln.readthedocs.io/"
       }
     ],
     "education_title": "Formation",
@@ -324,7 +325,8 @@
         "description": "A vulnerability prioritization tool that ranks CVEs by real-world exploitation and explains every verdict.",
         "tags": ["Python", "CLI", "EPSS", "CISA KEV"],
         "github": "https://github.com/samy-difallah/maat-vuln",
-        "pypi": "https://pypi.org/project/maat-vuln/"
+        "pypi": "https://pypi.org/project/maat-vuln/",
+        "docs": "https://maat-vuln.readthedocs.io/"
       }
     ],
     "education_title": "Education",

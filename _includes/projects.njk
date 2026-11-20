@@ -7,7 +7,7 @@
             <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 pb-4 border-b border-zinc-800">
                 <h3 class="text-xl font-semibold">{{ project.name }}</h3>
                 <span class="flex items-center gap-4 text-sm">
-                    {% for link in [["GitHub", project.github], ["PyPI", project.pypi]] %}
+                    {% for link in [["GitHub", project.github], ["PyPI", project.pypi], ["Docs", project.docs]] %}
                     {% if link[1] %}
                     <a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-stone-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
                         {{ link[0] }}
