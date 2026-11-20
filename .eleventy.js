@@ -12,6 +12,10 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
+    // Appended to the stylesheet URL so each deploy gets a new URL: browsers and the
+    // GitHub Pages cache (10 min) then never serve the old CSS with the new HTML
+    eleventyConfig.addGlobalData("buildTime", () => Date.now());
+
     // Length of a role from "YYYY-MM" months, both counted, as LinkedIn does ("1 yr 4 mos").
     // An ongoing role (no end) runs to the build date, so it grows with each deploy.
     eleventyConfig.addFilter("duration", function(start, end, lang) {
