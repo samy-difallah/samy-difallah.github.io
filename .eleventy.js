@@ -16,6 +16,15 @@ module.exports = function(eleventyConfig) {
     // GitHub Pages cache (10 min) then never serve the old CSS with the new HTML
     eleventyConfig.addGlobalData("buildTime", () => Date.now());
 
+    // security.txt must say when it stops being valid (RFC 9116 advises less than a year
+    // ahead); counting from the build date renews it with each deploy
+    eleventyConfig.addGlobalData("securityTxtExpires", () => {
+        const expires = new Date();
+        expires.setUTCDate(expires.getUTCDate() + 360);
+        expires.setUTCHours(0, 0, 0, 0);
+        return expires.toISOString().replace(".000Z", "Z");
+    });
+
     // Length of a role from "YYYY-MM" months, both counted, as LinkedIn does ("1 yr 4 mos").
     // An ongoing role (no end) runs to the build date, so it grows with each deploy.
     eleventyConfig.addFilter("duration", function(start, end, lang) {
