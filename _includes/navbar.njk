@@ -1,4 +1,4 @@
-<nav class="fixed top-0 left-0 right-0 px-4 sm:px-8 backdrop-blur-md shadow-xs z-50">
+<nav aria-label="{{ translations[lang].nav_label }}" class="fixed top-0 left-0 right-0 px-4 sm:px-8 backdrop-blur-md shadow-xs z-50">
     <div class="px-4 sm:px-8">
         <div class="flex justify-between items-center h-16">
             <div class="text-2xl text-stone-100">
@@ -23,7 +23,7 @@
     </div>
     {# Small screens: a compact row under the bar, since the name and the switcher already fill it.
        Large screens: centred on the bar itself, since the name and the switcher have different widths #}
-    <ul aria-label="{{ translations[lang].nav_label }}" class="max-w-sm mx-auto pb-2 flex justify-between text-xs font-medium sm:max-w-none sm:justify-center sm:gap-8 sm:text-sm lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-16 lg:items-center lg:pb-0">
+    <ul class="max-w-sm mx-auto pb-2 flex justify-between text-xs font-medium sm:max-w-none sm:justify-center sm:gap-8 sm:text-sm lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-16 lg:items-center lg:pb-0">
         {% for section in ["experience", "projects", "skills", "education"] %}
         <li><a href="#{{ section }}" class="section-link block py-1 text-stone-300 hover:text-white aria-[current=location]:text-white underline decoration-transparent aria-[current=location]:decoration-accent decoration-2 underline-offset-8 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">{{ translations[lang]["nav_" + section] }}</a></li>
         {% endfor %}
