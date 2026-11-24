@@ -30,6 +30,18 @@ jobs:
       - name: Validate HTML
         run: npm run test:html
 
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --offline
+            --no-progress
+            --root-dir ${{ github.workspace }}/_site
+            --index-files index.html
+            --include-fragments
+            --remap "https://samy-difallah\.github\.io/ file://${{ github.workspace }}/_site/"
+            _site
+
       - name: Upload artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
