@@ -1,3 +1,6 @@
+{# First focusable element on the page: visible only once focused, it lets keyboard users jump past the navbar #}
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-lg focus:bg-zinc-900 focus:border focus:border-stone-700 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ translations[lang].skip_link }}</a>
+
 <nav aria-label="{{ translations[lang].nav_label }}" class="fixed top-0 left-0 right-0 px-4 sm:px-8 backdrop-blur-md shadow-xs z-50">
     <div class="px-4 sm:px-8">
         <div class="flex justify-between items-center h-16">

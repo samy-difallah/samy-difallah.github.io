@@ -34,7 +34,7 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    main, section {
+    main > * {
         animation: fadeIn 0.6s ease-out;
     }
 }
