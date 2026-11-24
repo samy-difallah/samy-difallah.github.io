@@ -9,6 +9,8 @@ module.exports = function(eleventyConfig) {
     // (which would also output googleca52e9b12bfefd25/index.html)
     eleventyConfig.addPassthroughCopy("googleca52e9b12bfefd25.html");
     eleventyConfig.ignores.add("googleca52e9b12bfefd25.html");
+    // Public PGP key for encrypted security reports, linked from security.txt (Encryption:)
+    eleventyConfig.addPassthroughCopy("pgp-key.txt");
 
     eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
