@@ -5,10 +5,12 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
-    "test:html": "html-validate _site"
+    "test:html": "html-validate _site",
+    "test:lighthouse": "lhci autorun"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",
+    "@lhci/cli": "^0.16.1",
     "@tailwindcss/postcss": "^4.3.5",
     "html-validate": "^11.21.1",
     "postcss": "^8.5.33",

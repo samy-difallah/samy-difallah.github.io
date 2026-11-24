@@ -42,6 +42,19 @@ jobs:
             --remap "https://samy-difallah\.github\.io/ file://${{ github.workspace }}/_site/"
             _site
 
+      - name: Run Lighthouse CI
+        timeout-minutes: 10
+        run: npm run test:lighthouse
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci
+          include-hidden-files: true
+          if-no-files-found: ignore
+
       - name: Upload artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5

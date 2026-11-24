@@ -7,3 +7,6 @@ _site/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Lighthouse CI reports
+.lighthouseci/
