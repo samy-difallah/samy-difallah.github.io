@@ -1,0 +1,26 @@
+---
+layout: base.njk
+---
+{# One blog article: front matter gives title, description, date and, once the content changes, updated #}
+{% include "blog-navbar.njk" %}
+
+<main id="main" class="px-4 sm:px-8 pt-28 pb-24">
+    <article class="max-w-prose mx-auto">
+        <a href="/{{ lang }}/blog/" aria-label="{{ translations[lang].blog_back }}" title="{{ translations[lang].blog_back }}" class="inline-flex items-center justify-center size-9 mb-8 rounded-lg bg-stone-800/50 border border-stone-700/50 hover:border-stone-600/50 text-stone-300 hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{% icon "arrow-left" %}</a>
+        <header class="mb-12">
+            <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight text-stone-100">{{ title }}</h1>
+            <p class="mt-6 text-sm text-stone-400">
+                <time datetime="{{ page.date | isoDate }}">{{ page.date | longDate(lang) }}</time>
+                · {{ content | readingTime }} {{ translations[lang].reading_time }}
+                {% if updated %}
+                · {{ translations[lang].updated }} <time datetime="{{ updated | isoDate }}">{{ updated | longDate(lang) }}</time>
+                {% endif %}
+            </p>
+        </header>
+        <div class="article-body prose prose-invert prose-stone max-w-none">
+            {{ content | safe }}
+        </div>
+    </article>
+</main>
+
+{% include "blog-footer.njk" %}

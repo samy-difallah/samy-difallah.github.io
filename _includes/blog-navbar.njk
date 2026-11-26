@@ -1,0 +1,24 @@
+{# Navbar of the blog, a space of its own: only the name, back to the portfolio, and the language switcher.
+   The name sits where it does in the portfolio's navbar #}
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-lg focus:bg-zinc-900 focus:border focus:border-stone-700 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ translations[lang].skip_link }}</a>
+
+<nav aria-label="Blog" class="fixed top-0 left-0 right-0 px-4 sm:px-8 backdrop-blur-md shadow-xs z-50">
+    <div class="px-4 sm:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="text-2xl text-stone-100">
+                <a href="/{{ lang }}/" class="font-bold hover:opacity-80">Samy DIFALLAH</a>
+            </div>
+            {# Switches to the same page in the other language #}
+            <div class="lang-switcher">
+                <div role="group" aria-label="{{ translations[lang].language_switcher }}" class="relative flex items-center bg-stone-800/50 rounded-lg px-1 py-1 border border-stone-700/50 hover:border-stone-600/50 transition-all duration-300">
+                    <a href="{{ page.url | otherLangUrl('fr') }}" data-lang="fr" hreflang="fr" lang="fr" aria-label="Français"{% if lang == 'fr' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'fr' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">FR</a>
+                    <span class="w-px h-4 bg-stone-600/50 mx-1" aria-hidden="true"></span>
+                    <a href="{{ page.url | otherLangUrl('en') }}" data-lang="en" hreflang="en" lang="en" aria-label="English"{% if lang == 'en' %} aria-current="page"{% endif %} class="lang-option{% if lang == 'en' %} active{% endif %} px-3 py-1 text-sm font-medium rounded-md transition-all duration-300 cursor-pointer">EN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{# For the language switcher; the portfolio's scroll spy finds no section link here and does nothing #}
+<script src="/js/navbar.js"></script>

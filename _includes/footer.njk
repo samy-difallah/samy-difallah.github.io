@@ -13,6 +13,7 @@
                 {% for section in ["experience", "projects", "skills", "education"] %}
                 <li><a href="#{{ section }}" class="footer-section-link hover:text-white transition-colors duration-300">{{ translations[lang]["nav_" + section] }}</a></li>
                 {% endfor %}
+                <li><a href="/{{ lang }}/blog/" target="_blank" rel="noopener" class="hover:text-white transition-colors duration-300">Blog</a></li>
                 <li><a href="{{ translations[lang].cv_url }}" download aria-label="{{ translations[lang].cv_label }}" class="inline-flex items-center gap-2 hover:text-white transition-colors duration-300">{% icon "download" %}CV</a></li>
             </ul>
         </nav>

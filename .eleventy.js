@@ -49,6 +49,34 @@ module.exports = function(eleventyConfig) {
         return parts.join(" ");
     });
 
+    // Blog articles per language, newest first; articles published the same day are
+    // ordered by their optional "order" front matter (smallest first)
+    for (const lang of ["en", "fr"]) {
+        eleventyConfig.addCollection(`posts_${lang}`, collectionApi =>
+            collectionApi.getFilteredByGlob(`${lang}/blog/*.md`).sort((a, b) =>
+                b.date - a.date || (a.data.order ?? 0) - (b.data.order ?? 0)));
+    }
+
+    // Minutes to read a rendered article, at 200 words a minute, rounded up
+    eleventyConfig.addFilter("readingTime", function(html) {
+        const words = html.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length;
+        return Math.max(1, Math.ceil(words / 200));
+    });
+
+    // Article date in words, in the page's language ("November 26, 2026", "26 novembre 2026").
+    // Front matter dates are midnight UTC, so they are read in UTC to keep the same day
+    eleventyConfig.addFilter("longDate", function(date, lang) {
+        return new Date(date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", {
+            day: "numeric", month: "long", year: "numeric", timeZone: "UTC"
+        });
+    });
+
+    // Machine-readable date for <time datetime>
+    eleventyConfig.addFilter("isoDate", date => new Date(date).toISOString().slice(0, 10));
+
+    // Same page in the other language: articles keep the same slug in /en/ and /fr/
+    eleventyConfig.addFilter("otherLangUrl", (url, otherLang) => `/${otherLang}/${url.split("/").slice(2).join("/")}`);
+
     // Inline SVG icon, sized like a Font Awesome glyph: 1em tall, colored by currentColor
     eleventyConfig.addShortcode("icon", function(name, classes = "") {
         const icon = icons[name];

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Article text styles (the prose classes), from @tailwindcss/typography */
+@plugin "@tailwindcss/typography";
 
 /* Inter 4 variable (weights 100-900), Latin subset, from @fontsource-variable/inter 5.3.0. License: assets/fonts/inter-OFL.txt */
 @font-face {
@@ -89,4 +91,37 @@ html {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         margin-inline: calc((100% - min(105.75rem, 100vw - 3rem)) / 2);
     }
+}
+
+/*
+ * Blog articles: the typography plugin sets the text, these keep it in line with the
+ * rest of the site: Source Serif 4 for headings, the accent colour for links, and
+ * thin stone borders for tables. Body text stays at stone-300, well above the
+ * contrast minimum on zinc-950.
+ */
+.article-body {
+    --tw-prose-invert-body: var(--color-stone-300);
+    --tw-prose-invert-headings: var(--color-stone-100);
+    --tw-prose-invert-bold: var(--color-stone-100);
+    --tw-prose-invert-links: var(--color-accent);
+    --tw-prose-invert-bullets: var(--color-stone-500);
+    --tw-prose-invert-counters: var(--color-stone-400);
+    --tw-prose-invert-th-borders: var(--color-stone-700);
+    --tw-prose-invert-td-borders: var(--color-stone-800);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+}
+
+.article-body :is(h2, h3) {
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+.article-body a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.article-body a:hover {
+    color: var(--color-blue-400);
 }

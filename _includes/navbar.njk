@@ -7,9 +7,13 @@
             <div class="text-2xl text-stone-100">
                 <a href="/{{ lang }}/" class="font-bold hover:opacity-80">Samy DIFALLAH</a>
             </div>
-            {# The CV pill only shows from sm: on phones the name and the switcher fill the bar,
-               so the footer's Links column carries it there #}
+            {# The Blog and CV pills only show from sm: on phones the name and the switcher fill the bar,
+               so the footer's Links column carries them there. The blog is a separate space, so it opens in a new tab #}
             <div class="flex items-center gap-3">
+                <a href="/{{ lang }}/blog/" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-stone-800/50 rounded-lg px-3 py-2 border border-stone-700/50 hover:border-stone-600/50 text-sm font-medium text-stone-300 hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                    Blog
+                    {% icon "arrow-up-right-from-square", "text-xs" %}
+                </a>
                 <a href="{{ translations[lang].cv_url }}" download title="{{ translations[lang].cv_label }}" aria-label="{{ translations[lang].cv_label }}" class="hidden sm:inline-flex items-center gap-2 bg-stone-800/50 rounded-lg px-3 py-2 border border-stone-700/50 hover:border-stone-600/50 text-sm font-medium text-stone-300 hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                     {% icon "download" %}
                     CV

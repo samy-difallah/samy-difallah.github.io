@@ -3,17 +3,19 @@
        GitHub Pages can't send headers, so frame-ancestors (which needs one) can't be set.
        connect-src is only for npm run serve: its live reload connects back with a WebSocket. #}
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; {% if eleventy.env.runMode == 'serve' %}connect-src 'self'; {% endif %}base-uri 'none'; form-action 'none'">
-    <meta name="description" content="{{ translations[lang].pitch }}">
+    <meta name="description" content="{{ description or translations[lang].pitch }}">
     {% if not noindex %}
-    <link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
-    <link rel="alternate" hreflang="fr" href="{{ site.url }}/fr/">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | otherLangUrl('en') }}">
+    <link rel="alternate" hreflang="fr" href="{{ site.url }}{{ page.url | otherLangUrl('fr') }}">
+    {% if page.url in ["/", "/en/", "/fr/"] %}
     <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+    {% endif %}
     {% endif %}
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ translations[lang].title }}">
-    <meta property="og:description" content="{{ translations[lang].pitch }}">
+    <meta property="og:type" content="{% if article %}article{% else %}website{% endif %}">
+    <meta property="og:title" content="{{ title or translations[lang].title }}">
+    <meta property="og:description" content="{{ description or translations[lang].pitch }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:locale" content="{% if lang == 'fr' %}fr_FR{% else %}en_US{% endif %}">
     <meta property="og:locale:alternate" content="{% if lang == 'fr' %}en_US{% else %}fr_FR{% endif %}">
