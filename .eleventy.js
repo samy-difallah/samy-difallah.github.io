@@ -50,11 +50,12 @@ module.exports = function(eleventyConfig) {
     });
 
     // Blog articles per language, newest first; articles published the same day are
-    // ordered by their optional "order" front matter (smallest first)
+    // ordered by their optional "order" front matter, the publication sequence within that day
+    // (0 by default, highest first, so the article written last comes first)
     for (const lang of ["en", "fr"]) {
         eleventyConfig.addCollection(`posts_${lang}`, collectionApi =>
             collectionApi.getFilteredByGlob(`${lang}/blog/*.md`).sort((a, b) =>
-                b.date - a.date || (a.data.order ?? 0) - (b.data.order ?? 0)));
+                b.date - a.date || (b.data.order ?? 0) - (a.data.order ?? 0)));
     }
 
     // Minutes to read a rendered article, at 200 words a minute, rounded up

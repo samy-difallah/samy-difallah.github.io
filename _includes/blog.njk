@@ -1,17 +1,17 @@
-{# Blog page: an intro, then one card per article, newest first #}
+{# Blog page: an intro, then a grid of article cards (1, 2 then 3 per row), newest first #}
 {% include "blog-navbar.njk" %}
 
 <main id="main" class="px-4 sm:px-8 pt-28 pb-24">
-    <div class="max-w-prose mx-auto">
+    <div class="max-w-6xl mx-auto">
         <header class="pb-10 mb-10 border-b border-zinc-800">
             <h1 class="font-serif text-4xl sm:text-5xl font-semibold text-stone-100">Blog</h1>
             <p class="mt-6 text-lg text-stone-300 leading-relaxed">{{ translations[lang].blog_intro }}</p>
         </header>
-        <ul class="space-y-6">
+        <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {% for post in collections["posts_" + lang] %}
             {# The whole card is one link: the title link is stretched over the card (its ::after), so the link is named
                by the title alone and keyboard users stop once per card. The "button" is only a visual cue #}
-            <li class="group relative rounded-lg border border-zinc-800 hover:border-zinc-700 bg-zinc-900/50 px-6 py-6 transition-colors duration-300 has-focus-visible:ring-2 has-focus-visible:ring-accent">
+            <li class="group relative flex flex-col rounded-lg border border-zinc-800 hover:border-zinc-700 bg-zinc-900/50 px-6 py-6 transition-colors duration-300 has-focus-visible:ring-2 has-focus-visible:ring-accent">
                 <h2 class="font-serif text-2xl font-semibold text-stone-100"><a href="{{ post.url }}" class="after:absolute after:inset-0 after:rounded-lg focus:outline-none">{{ post.data.title }}</a></h2>
                 <p class="mt-2 text-sm text-stone-400">
                     <time datetime="{{ post.date | isoDate }}">{{ post.date | longDate(lang) }}</time>
@@ -20,7 +20,7 @@
                 <p class="mt-4 text-stone-300 leading-relaxed">{{ post.data.description }}</p>
                 {# Plain text rather than a button, since the whole card is the link; lit when the card is hovered,
                    and its arrow slides right unless the visitor prefers reduced motion #}
-                <span aria-hidden="true" class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-stone-300 group-hover:text-white transition-colors duration-300">
+                <span aria-hidden="true" class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-medium text-stone-300 group-hover:text-white transition-colors duration-300">
                     {{ translations[lang].blog_read }}
                     {% icon "arrow-right", "transition-transform duration-300 motion-safe:group-hover:translate-x-1" %}
                 </span>
