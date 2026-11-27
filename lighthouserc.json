@@ -2,7 +2,18 @@
   "ci": {
     "collect": {
       "staticDistDir": "./_site",
-      "url": ["/en/", "/fr/"],
+      "url": [
+        "/en/",
+        "/fr/",
+        "/en/blog/",
+        "/fr/blog/",
+        "/en/blog/psirt-vs-csirt/",
+        "/fr/blog/psirt-vs-csirt/",
+        "/en/blog/cyber-resilience-act/",
+        "/fr/blog/cyber-resilience-act/",
+        "/en/blog/sbom/",
+        "/fr/blog/sbom/"
+      ],
       "settings": {
         "skipAudits": ["robots-txt"]
       }
