@@ -72,6 +72,31 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    // Article headings (h2, h3) get an id from their text, so the table of contents can link
+    // to them: "Exploité, pas exploitable" -> "exploite-pas-exploitable". A repeated text
+    // gets a number ("in-short-2") to keep the ids unique within the article
+    eleventyConfig.amendLibrary("md", md => {
+        md.core.ruler.push("heading_ids", state => {
+            const used = new Map();
+            state.tokens.forEach((token, i) => {
+                if (token.type !== "heading_open" || !["h2", "h3"].includes(token.tag)) {
+                    return;
+                }
+                const slug = state.tokens[i + 1].content
+                    .normalize("NFD").replace(/[̀-ͯ]/g, "")
+                    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+                const count = (used.get(slug) ?? 0) + 1;
+                used.set(slug, count);
+                token.attrSet("id", count > 1 ? `${slug}-${count}` : slug);
+            });
+        });
+    });
+
+    // Table of contents of a rendered article: its h2 and h3 headings, with their id and text
+    eleventyConfig.addFilter("toc", html =>
+        [...html.matchAll(/<h([23]) id="([^"]+)">(.*?)<\/h\1>/g)].map(([, level, id, text]) =>
+            ({ level: Number(level), id, text: text.replace(/<[^>]*>/g, "") })));
+
     // Machine-readable date for <time datetime>
     eleventyConfig.addFilter("isoDate", date => new Date(date).toISOString().slice(0, 10));
 

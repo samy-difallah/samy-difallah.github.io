@@ -115,6 +115,8 @@ html {
 .article-body :is(h2, h3) {
     font-family: var(--font-serif);
     font-weight: 600;
+    /* Clear of the fixed navbar when reached from the table of contents */
+    scroll-margin-top: 7rem;
 }
 
 .article-body a {

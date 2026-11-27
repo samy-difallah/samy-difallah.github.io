@@ -5,7 +5,7 @@ layout: base.njk
 {% include "blog-navbar.njk" %}
 
 <main id="main" class="px-4 sm:px-8 pt-28 pb-24">
-    <article class="max-w-prose mx-auto">
+    <article class="relative max-w-prose mx-auto">
         <a href="/{{ lang }}/blog/" aria-label="{{ translations[lang].blog_back }}" title="{{ translations[lang].blog_back }}" class="inline-flex items-center justify-center size-9 mb-8 rounded-lg bg-stone-800/50 border border-stone-700/50 hover:border-stone-600/50 text-stone-300 hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{% icon "arrow-left" %}</a>
         <header class="mb-12">
             <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight text-stone-100">{{ title }}</h1>
@@ -17,6 +17,23 @@ layout: base.njk
                 {% endif %}
             </p>
         </header>
+        {# Table of contents, on wide screens only: in the margin to the right of the article,
+           it stays in view while the article scrolls. Built from the article's h2 and h3; js/toc.js
+           highlights the section being read #}
+        {% set headings = content | toc %}
+        {% if headings | length %}
+        <aside class="hidden xl:block absolute top-0 bottom-0 left-full ml-12 w-52">
+            <nav aria-labelledby="toc-title" class="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto">
+                <p id="toc-title" class="mb-3 text-xs font-semibold uppercase tracking-wider text-stone-400">{{ translations[lang].toc_title }}</p>
+                <ul class="space-y-2 border-l border-stone-800 text-sm">
+                    {% for heading in headings %}
+                    <li><a href="#{{ heading.id }}" class="toc-link block -ml-px border-l border-transparent aria-[current=location]:border-accent aria-[current=location]:text-white {{ 'pl-7' if heading.level == 3 else 'pl-4' }} text-stone-400 hover:text-stone-100 hover:border-stone-500 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ heading.text | safe }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </aside>
+        <script src="/js/toc.js" defer></script>
+        {% endif %}
         <div class="article-body prose prose-invert prose-stone max-w-none">
             {{ content | safe }}
         </div>
